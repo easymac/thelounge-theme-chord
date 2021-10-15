@@ -1,0 +1,1083 @@
+/*
+  
+  Chord
+  v1.0.0
+  by easymac
+  https://github.com/easymac/thelounge-theme-chord
+  
+  A darkly elegant theme for The Lounge.
+
+  For The Lounge v4.2.0.
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900');
+
+$svg-loading: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 325.82 57.54"><path fill="%23222" d="M24.2,2.72,18.07,43.29H38.75L37,54.82H2.33l8-52.1H24.2m2.32-2H8.57l-.26,1.7-8,52.09L0,56.82H38.7l.26-1.7,1.77-11.53.35-2.3H20.4L26.17,3l.35-2.3Z"/><path fill="%23222" d="M71.43,2A22.72,22.72,0,0,1,84.08,5.33a18.43,18.43,0,0,1,7.33,9.37,28.71,28.71,0,0,1,1,14.18A34.29,34.29,0,0,1,87.17,43a28,28,0,0,1-10.12,9.29,28.47,28.47,0,0,1-13.73,3.3q-7.71,0-12.86-3.3A17.92,17.92,0,0,1,43.15,43a28.68,28.68,0,0,1-.94-14.08A34.43,34.43,0,0,1,47.53,14.7,28,28,0,0,1,71.43,2M65,44.3a10.25,10.25,0,0,0,5.33-1.46,11.93,11.93,0,0,0,4.24-4.79,27.83,27.83,0,0,0,2.61-9,26.08,26.08,0,0,0,.18-9.27,8.32,8.32,0,0,0-2.76-5,7.68,7.68,0,0,0-4.84-1.55,10.3,10.3,0,0,0-7.66,3.57q-3.36,3.57-4.74,12.28a24.7,24.7,0,0,0,0,9,7.9,7.9,0,0,0,2.81,4.79A8.07,8.07,0,0,0,65,44.3M71.43,0A30,30,0,0,0,45.87,13.59a36.53,36.53,0,0,0-5.63,15,30.62,30.62,0,0,0,1,15.07,20,20,0,0,0,8.11,10.29,25.55,25.55,0,0,0,13.94,3.61A30.58,30.58,0,0,0,78,54a30,30,0,0,0,10.84-10,36.39,36.39,0,0,0,5.54-14.87A30.78,30.78,0,0,0,93.29,14,20.49,20.49,0,0,0,85.17,3.66,24.74,24.74,0,0,0,71.43,0ZM65,42.3a6.11,6.11,0,0,1-3.69-1.08,6.05,6.05,0,0,1-2-3.64,23.1,23.1,0,0,1,.07-8.19c.84-5.37,2.26-9.14,4.22-11.21a8.27,8.27,0,0,1,6.2-2.94,5.69,5.69,0,0,1,3.62,1.13,6.47,6.47,0,0,1,2,3.87,23.92,23.92,0,0,1-.2,8.53,25.9,25.9,0,0,1-2.4,8.33,10,10,0,0,1-3.49,4A8.22,8.22,0,0,1,65,42.3Z"/><path fill="%23222" d="M128.53,2.72,139,54.82H125.22l-1.87-10.09H107l-5,10.09H88l26.3-52.1h14.19M111.75,32.77H122l-2.52-16.65-7.71,16.65M130.17.72H113.11l-.56,1.1-26.3,52.1-1.46,2.9h18.39l.55-1.11,4.5-9h13.45l1.57,8.45.31,1.64h17.86l-.48-2.4L130.49,2.33,130.17.72ZM114.88,30.77,118.47,23l1.18,7.77Z"/><path fill="%23222" d="M157.28,2.72q5.41,0,10.56.27a55.09,55.09,0,0,1,9.6,1.3,23.34,23.34,0,0,1,7.84,3.29,15.37,15.37,0,0,1,5.28,6.25A23.73,23.73,0,0,1,192.45,24a38.76,38.76,0,0,1-.49,5.65,37.31,37.31,0,0,1-1.69,6.67,30,30,0,0,1-3.41,6.75,25.31,25.31,0,0,1-5.6,6A27.16,27.16,0,0,1,173,53.23a36.55,36.55,0,0,1-11.39,1.59H142.77l7.6-52.1h6.91m1.16,41.07h4.64a11.33,11.33,0,0,0,5.86-1.6,16.24,16.24,0,0,0,4.77-4.36,21.69,21.69,0,0,0,3.21-6.31,23.93,23.93,0,0,0,1.15-7.47,12.46,12.46,0,0,0-1.17-5.71,7.8,7.8,0,0,0-3.35-3.44,11,11,0,0,0-5.24-1.15H163l-4.54,30M157.28.72h-8.64l-.25,1.71-7.6,52.1-.34,2.29h21.19a38.64,38.64,0,0,0,12-1.69,29,29,0,0,0,8.84-4.55,27.49,27.49,0,0,0,6-6.42,32.24,32.24,0,0,0,3.63-7.2,39.62,39.62,0,0,0,1.78-7,40.14,40.14,0,0,0,.51-5.95,25.6,25.6,0,0,0-2.09-11,17.23,17.23,0,0,0-6-7.06,25.58,25.58,0,0,0-8.5-3.58A58,58,0,0,0,168,1c-3.46-.18-7-.27-10.67-.27Zm7.42,15h3.61a9.22,9.22,0,0,1,4.31.92,5.73,5.73,0,0,1,2.5,2.58,10.59,10.59,0,0,1,.95,4.8,22.22,22.22,0,0,1-1,6.86,19.89,19.89,0,0,1-2.91,5.72,14.2,14.2,0,0,1-4.19,3.84,9.27,9.27,0,0,1-4.84,1.32h-2.32l3.94-26Z"/><path fill="%23222" d="M216.08,2.72l-7.85,52.1h-14l7.89-52.1h14m2.32-2h-18l-.26,1.7-7.89,52.1-.34,2.3H210l.25-1.71L218.06,3l.34-2.3Z"/><path fill="%23222" d="M272.46,2.72l-8,52.1H251.93L235,23.76l-4.68,31.06h-14l8-52.1h14.05l15.78,29,4.36-29h14m2.33-2H256.73l-.26,1.7L253,25.56,240.06,1.77l-.56-1h-17l-.26,1.7-8,52.09L214,56.82H232l.26-1.71,3.79-25.17,14.09,25.83.57,1h15.48l.26-1.7,8-52.1.35-2.3Z"/><path fill="%23222" d="M304,2a22.25,22.25,0,0,1,11.56,2.74,16.55,16.55,0,0,1,6.72,7.11,15.8,15.8,0,0,1,1.43,9.24H309.1a10.67,10.67,0,0,0-.93-3.81,6.26,6.26,0,0,0-2.35-2.69,7.28,7.28,0,0,0-4-1A10,10,0,0,0,296.78,15a12,12,0,0,0-4.32,4.65,26,26,0,0,0-2.74,8.88,24.7,24.7,0,0,0-.2,7.72,9.19,9.19,0,0,0,1.87,4.49,6.82,6.82,0,0,0,3.1,2.09,11.53,11.53,0,0,0,3.41.54,8.85,8.85,0,0,0,2.79-.43,10.41,10.41,0,0,0,2.4-1.14A10,10,0,0,0,305,40.23a6.71,6.71,0,0,0,1.19-1.77l.9-1.87h-9l1.44-9.44,23.71.14L319,54.82h-9.15l.83-5.77q-1.51,1.34-3.55,2.85a19.15,19.15,0,0,1-5,2.57,21.37,21.37,0,0,1-7.23,1.07,21.64,21.64,0,0,1-12.37-3.37,18.39,18.39,0,0,1-7.13-9.37A27.94,27.94,0,0,1,274.52,29a34.08,34.08,0,0,1,5.4-14.18,29.16,29.16,0,0,1,10.36-9.42A28.38,28.38,0,0,1,304,2m0-2a30.49,30.49,0,0,0-14.62,3.59,31.35,31.35,0,0,0-11.06,10.05,36.21,36.21,0,0,0-5.73,15,30,30,0,0,0,1,14.83,20.49,20.49,0,0,0,7.9,10.36,26.63,26.63,0,0,0,21.4,2.53A21.88,21.88,0,0,0,308,53.75l-.11.78-.33,2.29h13.18l.26-1.7,4.18-27.53.34-2.28-2.31,0-23.71-.14h-1.72l-.26,1.71-1.45,9.43-.35,2.31h8a3.15,3.15,0,0,1-.25.28A8,8,0,0,1,302,40.12a9,9,0,0,1-1.93.91,7,7,0,0,1-2.17.33,9.58,9.58,0,0,1-2.82-.45,4.71,4.71,0,0,1-2.18-1.5,7.32,7.32,0,0,1-1.41-3.51,22.92,22.92,0,0,1,.21-7.09,24.09,24.09,0,0,1,2.49-8.18,10.09,10.09,0,0,1,3.58-3.9,8,8,0,0,1,4.06-1.13,5.41,5.41,0,0,1,2.92.68,4.21,4.21,0,0,1,1.6,1.84,8.78,8.78,0,0,1,.76,3.11l.12,1.86H325.4l.24-1.72A17.82,17.82,0,0,0,324,11a18.7,18.7,0,0,0-7.5-8A24.45,24.45,0,0,0,304,0Z"/></svg>');
+$svg-logo-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.73 86.6"><defs><style>.cls-1{fill:%23f2f2f2;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="cls-1" d="M76.88,4.36l-1.33-2.3A4.09,4.09,0,0,0,72,0H26.74a4.12,4.12,0,0,0-3.57,2.06l-1.33,2.3v0L1.88,38.94.55,41.24a4.15,4.15,0,0,0,0,4.12L23.17,84.54a4.12,4.12,0,0,0,3.57,2.06H94.09L84.22,69.52l14-24.16a4.1,4.1,0,0,0,0-4.12l-1.33-2.3L76.9,4.38M60.48,36.88,49.36,56.13h0L38.24,36.88H60.48"/></g></g></svg>');
+$svg-logo-primary: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 98.73 86.6"><defs><style>.cls-1{fill:url(%23linear-gradient);}.cls-2{fill:url(%23linear-gradient-2);}.cls-3{fill:url(%23linear-gradient-3);}</style><linearGradient id="linear-gradient" x1="62.28" y1="33.78" x2="19.21" y2="8.92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23ccc"/><stop offset="0" stop-color="%23cdcdcd"/><stop offset="0.02" stop-color="%23dedede"/><stop offset="0.05" stop-color="%23e9e9e9"/><stop offset="0.09" stop-color="%23f0f0f0"/><stop offset="0.19" stop-color="%23f2f2f2"/></linearGradient><linearGradient id="linear-gradient-2" x1="34.66" y1="36.88" x2="34.66" y2="86.6" xlink:href="%23linear-gradient"/><linearGradient id="linear-gradient-3" x1="53.79" y1="63.8" x2="96.85" y2="38.94" xlink:href="%23linear-gradient"/></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="cls-1" d="M76.88,8.47,60.48,36.88h-55a4.11,4.11,0,0,0-3.56,2.06l20-34.56v0l1.33-2.3A4.12,4.12,0,0,1,26.74,0H72a4.09,4.09,0,0,1,3.56,2.06l1.33,2.3v0A4.12,4.12,0,0,1,76.88,8.47Z"/><path class="cls-2" d="M69.32,86.6H26.74a4.12,4.12,0,0,1-3.57-2.06L.55,45.36a4.15,4.15,0,0,1,0-4.12l1.33-2.3a4.11,4.11,0,0,1,3.56-2.06h32.8L49.36,56.13l16.4,28.41A4.12,4.12,0,0,0,69.32,86.6Z"/><path class="cls-3" d="M98.17,45.36l-14,24.16L94.09,86.6H69.33a4.09,4.09,0,0,1-3.56-2.06L49.36,56.13,60.48,36.88,76.89,8.47a4.17,4.17,0,0,0,0-4.09L96.84,38.94l1.33,2.3A4.1,4.1,0,0,1,98.17,45.36Z"/></g></g></svg>');
+$svg-x: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f2f2f2'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+
+$old-bg: #202226;
+
+$public-sans: 'Public Sans', sans-serif;
+$dm-serif: 'DM Serif Display', serif;
+$dark-background: #2b2e31;
+$darker-background: #222428;
+$darkest-background: #171b20;
+$search-background: mix($dark-background, $darker-background, 50%);
+$light-grey: #373a40;
+$off-white: #eee;
+$pale-blue: #abb8c9;
+$link-blue: #7aafff;
+$muted-blue: #55606c;
+$highlight-color: #2f3b4c;
+
+$chat-wrap-width: 1200px;
+
+
+/*
+  CSS variables so they can be overridden
+*/
+:root {
+  --primary-font: #{$public-sans};
+  --logo-font: #{$dm-serif};
+  --chat-background: #{$dark-background};
+  --sidebar-background: #{$darker-background};
+  --off-black: #{$darkest-background};
+  --off-white: #{$off-white};
+  --link-color: #{$link-blue};
+  --highlight-bg-color: #{$highlight-color};
+  --chat-wrap-width: #{$chat-wrap-width};
+  --search-background: #{$search-background};
+}
+
+
+/*
+  Animations
+*/
+$rainbow-logo-animation: 0.8s rainbow linear;
+@keyframes rainbow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -500px 0px;
+  }
+}
+
+
+/*
+  Global
+*/
+::-webkit-input-placeholder {
+  color: var(--off-white);
+}
+::-webkit-scrollbar {
+  border-radius: 0 !important;
+  width: 3px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 0 !important;
+}
+.window {
+  font-family: var(--primary-font);
+  background: var(--chat-background);
+}
+
+
+/*
+  Button styles
+*/
+.btn {
+  border: none;
+  background: $pale-blue;
+  color: var(--sidebar-background);
+  border-radius: 8px;
+  text-transform: none;
+  letter-spacing: normal;
+  height: 45px;
+
+  &:focus, &:hover, &:active, &:disabled {
+    background: var(--off-white);
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: var(--sidebar-background);
+  }
+}
+
+
+/*
+  Link styles
+*/
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+
+  &:hover {
+    color: #88c8ff;
+  }
+
+  &:visited {
+    color: #6b90c7;
+
+    &:hover {
+      color: #88c8ff;
+    }
+  }
+
+  &:focus {
+    color: var(--link-color);
+    background-color: rgba(white, 0.2);
+    outline: none;
+  }
+}
+
+
+/*
+  Mentions popup
+*/
+.mentions-popup { 
+  background-color: var(--sidebar-background);
+  color: var(--off-white);
+  font-family: var(--primary-font);
+  padding: 0;
+
+  .mentions-popup-title {
+    font-weight: 700;
+    padding: 60px 15px 20px 15px;
+    background: var(--off-black);
+  }
+
+  .btn { height: auto; }
+
+  // lol
+  .msg {
+    padding: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--off-black);
+    margin-bottom: 10px;
+
+    .mentions-info {
+      font-style: italic;
+      color: rgba(var(--off-white), 0.8);
+      margin-bottom: 10px;
+    }
+
+    .content {
+      background: transparent;
+      font-weight: bold;
+      padding: 0;
+    }
+
+    .msg-hide {
+      color: $pale-blue;
+
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+
+/*
+  Context menu
+*/
+#context-menu, .textcomplete-menu {
+  background: rgba(var(--off-black), 0.75);
+  border: 1px solid black;
+  backdrop-filter: blur(20px);
+
+  .context-menu-item, .textcomplete-item {
+    color: var(--off-white);
+
+    // why is this an anchor
+    a {
+      color: var(--off-white);
+      text-decoration: none;
+    }
+
+    &.active {
+      background: rgba(white, 0.1);
+    }
+  }
+
+  .context-menu-divider {
+    background: black;
+  }
+}
+
+
+/*
+  Upper-left logo
+*/
+#sidebar {
+  min-width: 220px;
+  width: 11vw;
+
+  .logo, .logo-inverted {
+    display: none;
+  }
+
+  .logo-container {
+    height: 45px;
+    margin-bottom: 30px;
+
+    &:hover {
+      &::after {
+        font-weight: bold;
+        color: transparent;
+        // This could definitely be improved. SVG?
+        background: linear-gradient(35deg,
+          white, white, white, white, white,
+          #98A9D7, #8ED2CD, #C2ED98, #F1F487, #FED776, #F59B7C, #FED776, #F1F487, #C2ED98, #8ED2CD, #98A9D7,
+          white, white, white, white
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-size: 500px 45px;
+        animation: $rainbow-logo-animation;
+      }
+    }
+    
+    &::after {
+      content: 'the lounge';
+      font-family: var(--logo-font);
+      font-size: 18px;
+      display: inline-block;
+      color: white;
+      margin: auto auto 0 auto;
+    }
+
+    &::before {
+      content: ' ';
+      display: block;
+      background: $svg-logo-primary;
+      width: 25px;
+      height: 25px;
+      background-repeat: no-repeat;
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+}
+
+
+/*
+  Network list
+*/
+#sidebar {
+  padding: 0px 30px;
+  background: #222428;
+  font-family: var(--primary-font);
+
+  .scrollable-area { overflow-x: visible }
+
+  .jump-to-input {
+    margin: 0 0 15px 0;
+
+    .input {
+      background: var(--sidebar-background);
+      color: var(--off-white);
+      border: 1px solid var(--chat-background);
+      border-radius: 10px;
+      padding: 0 15px;
+
+      &::placeholder {
+        color: $pale-blue;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5)
+      }
+    }
+
+    &::before {
+      color: $muted-blue;
+    }
+  }
+
+  .lobby-wrap {
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .collapse-network {
+    opacity: 0.4;
+    order: 2;
+    margin-left: auto;
+
+    &:hover { opacity: 1 }
+  }
+
+  .add-channel-tooltip,
+  .channel-list-item .badge,
+  .channel-list-item,
+  .close-tooltip {
+    order: 3;
+  }
+
+  .network .collapse-network-icon {
+    background: white;
+    border-radius: 999px;
+    font-size: 0.8em;
+    display: block;
+    width: 13px;
+    height: 13px;
+    position: relative;
+
+    &:before {
+      color: var(--chat-background);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      line-height: 13px;
+    
+    }
+  }
+
+  .add-channel-tooltip {
+    line-height: normal;
+  }
+
+  .badge {
+    line-height: 1;
+  }
+
+  .channel-list-item {
+    padding: 6px 0 6px 0px;
+  
+    &:hover {
+      background: none;
+    }
+  
+    &.active {
+      background: none;
+    }
+  
+    &[data-type=lobby] {
+      font-size: 1.3em;
+      color: var(--off-white);
+      font-weight: 700;
+  
+      &:hover {
+        color: white;
+      }
+    }
+  
+    .name {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+}
+
+
+/*
+  Drag & drop styles
+*/
+.ui-sortable-ghost::after,
+.ui-sortable-dragging-touch-cue:not(.ui-sortable-dragging)::after {
+  background: $darkest-background; 
+}
+
+/*
+  Sidebar footer
+*/
+#footer {
+  margin-bottom: 10px;
+
+  button {
+    color: $pale-blue;
+    margin: 0 3px;
+    width: 60px;
+
+    &:hover {
+      background: rgba($pale-blue, 0.1);
+    }
+
+    &.active {
+      background: rgba(var(--link-color), 0.1);
+    }
+
+    &.active:hover {
+      background: rgba(var(--link-color), 0.1);
+    }
+  }
+}
+
+
+/*
+  Chat message input box
+*/
+#form {
+  background: var(--chat-background);
+  border-top: 0;
+
+  padding: 10px;
+  margin: 0 10px 10px 10px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $light-grey;
+    content: ' ';
+    z-index: 1;
+
+    border-radius: 10px;
+  }
+
+  * { z-index: 1 }
+
+  #input {
+    background: transparent;
+    height: 25px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0px 10px;
+    color: var(--off-white);
+
+    &::placeholder {
+      color: rgba(var(--off-white), 0.5);
+    }
+  }
+
+  #submit, #upload {
+    color: $pale-blue;
+  }
+}
+
+
+/*
+  Loading splash
+*/
+#loading {
+  color: var(--off-white);
+  background: var(--chat-background); 
+  font-family: var(--primary-font);
+
+  .logo {
+    display: none;
+  }
+
+  #loading-status-container {
+
+    * {
+      z-index: 2;
+    }
+
+    &::before {
+      background-image: $svg-logo-primary;
+      margin: 0 auto;
+      padding-top: 250px;
+      background-repeat: no-repeat;
+      background-size: 250px 250px;
+      background-position: top center;
+      content: 'the lounge';
+      font-family: var(--logo-font);
+      color: var(--off-white);
+      vertical-align: middle;
+      font-size: 6em;
+      letter-spacing: -4px;
+      z-index: 2;
+    }
+  }
+}
+
+
+/*
+  Topic and upper-right buttons
+*/
+#chat .header {
+  border-bottom: none;
+  align-items: flex-end;
+  line-height: normal;
+  padding-bottom: 8px;
+
+  .title {
+    font-weight: 700;
+    font-size: 1.1em;
+  }
+
+  .topic {
+    color: $pale-blue;
+    white-space: nowrap;
+  }
+
+  button {
+    position: relative;
+    top: 8px;
+    color: $pale-blue;
+  }
+}
+
+
+/*
+  Styling for message buffer
+*/
+#chat {
+  background-color: var(--chat-background);
+  color: var(--off-white);
+  margin-bottom: 10px;
+
+  .chat-view[data-type=channel] .msg.highlight {
+    border-left: none;
+    background-color: var(--highlight-bg-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    .content {
+      border-left: 0;
+    }
+
+    .time {
+      padding-left: 0;
+      color: var(--off-white);
+      padding-left: 10px;
+      padding-top: 5px;
+    }
+  }
+  
+  .messages {
+    padding-bottom: 0;
+  }
+
+  .msg {
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1px;
+  
+    max-width: var(--chat-wrap-width);
+
+    &.self .content {
+      color: #fff;
+    }
+
+    .hostmask, .hostmask + i {
+      filter: saturate(30%) brightness(102%);
+    }
+
+    .from {
+      font-weight: 500;
+    }
+  
+    // yawn
+    &[data-type=away] .content,
+    &[data-type=back] .content,
+    &[data-type=condensed] .content,
+    &[data-type=join] .content,
+    &[data-type=kick] .content,
+    &[data-type=mode] .content,
+    &[data-type=nick] .content,
+    &[data-type=part] .content,
+    &[data-type=quit] .content,
+    &[data-type=topic] .content,
+    &[data-type=topic_set_by] .content {
+      color: $pale-blue;
+    }
+
+    &[data-type=notice] {
+      .content {
+        color: $pale-blue;
+      }
+      .time {
+        color: $muted-blue;
+      }
+    }
+
+
+    &[data-type=join] .from:before {
+      color: rgba($pale-blue, 0.8);
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85em;
+      content: '\f061';
+    }
+
+    &[data-type=part] .from:before, &[data-type=quit] .from:before {
+      color: $muted-blue;
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85em;
+      content: '\f061';
+    }
+
+    &[data-type=nick] .from:before,
+    &[data-type=topic] .from:before {
+      color: rgba($pale-blue, 0.8);
+    }
+  }
+
+  .content {
+    border-left: none;
+  }
+
+  .time {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $muted-blue;
+    padding-left: 10px;
+  }
+
+  .unread-marker, .date-marker {
+    text-align: right;
+    font-weight: normal;
+
+    &::before {
+      border-top: 1px solid $muted-blue;
+    }
+
+    .unread-marker-text, .date-marker-text {
+      color: var(--sidebar-background);
+      display: inline-block;
+      margin-right: auto;
+      text-align: right;
+
+      &::before {
+        background: transparent;
+        color: white;
+        background: $muted-blue;
+        border-radius: 999px;
+        padding: 3px 9px;
+      }
+    }
+  }
+
+  .scroll-down-arrow {
+    border-radius: 30%;
+    background: $pale-blue; 
+    color: var(--sidebar-background);
+    border: none;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+  }
+}
+
+
+/*
+  Embedded previews
+*/
+#chat {
+  .toggle-content {
+    background: var(--sidebar-background);
+     padding: 15px;
+
+     .more {
+       color: var(--link-color);
+     }
+
+     .thumb {
+       max-height: 110px;
+       max-width: none;
+     }
+  }
+}
+
+/*
+  Userlist
+*/
+#chat .userlist { 
+  border: none;
+
+  .user-mode::before {
+    background: transparent;
+    color: $old-bg;
+    background: $muted-blue;
+    margin-right: auto;
+    border-radius: 999px;
+    display: inline-block;
+    padding: 0 8px;
+    margin-left: 16px;
+    margin-bottom: 4px;
+  }
+
+  .count {
+    background: transparent;
+    color: var(--off-white);
+    padding: 15px;
+    margin-bottom: 30px;
+
+    &:before {
+      right: 26px;
+    }
+  }
+
+  .search {
+    background: var(--search-background);
+    border-radius: 12px;
+    color: var(--off-white);
+
+    &:focus {
+      background: var(--sidebar-background); 
+    }
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      color: white;
+      background-image: $svg-x;
+      height: 20px;
+      width: 20px;
+      position: relative;
+      top: -1px;
+
+    }
+  }
+}
+
+
+/*
+  Menu pages
+*/
+// lol
+#connect .container, #settings .container, #help .container {
+  color: var(--off-white);
+  font-family: var(--primary-font);
+  align-self: auto;
+  margin-top: 50px;
+  margin-left: 100px;
+
+  h1, h2, h3 {
+    font-family: var(--primary-font);
+    color: var(--off-white);
+    font-weight: 700;
+  }
+
+  h2 {
+    border-bottom: none;
+    position: relative;
+    margin-bottom: 26px;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      right: auto;
+      bottom: -6px;
+      height: 2px;
+      width: 30px;
+      content: ' ';
+      display: block;
+      background: $pale-blue;
+    }
+  } 
+
+  .input {
+    background: var(--sidebar-background);
+    color: var(--off-white);
+    border: 1px solid var(--off-black);
+    border-radius: 10px;
+    padding: 0 15px;
+    height: 50px;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5)
+    }
+  }
+
+  textarea.input {
+    height: 100px;
+  }
+}
+
+
+
+
+/*
+
+  Styles for mobile UI.
+  TODO: Determine if this query is sufficient.
+
+*/
+$mobile-sidebar-width: 80%;
+
+@media (max-width: 768px) {
+  #sidebar {
+    width: $mobile-sidebar-width;
+    left: -$mobile-sidebar-width;
+ 
+    background-color: rgba(var(--chat-background), 0.5) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    .logo-container::before {
+      font-size: 2em;
+    }
+
+    .channel-list-item {
+      font-size: 1.05em;
+      padding-bottom: 6px;
+
+      &[data-type=lobby] {
+        font-size: 2.0em;
+      }
+
+      &:before {
+        font-size: 0.75em;
+        line-height: 21px;
+      }
+    }
+
+    .network .collapse-network-icon {
+      width: 18px;
+      height: 18px;
+      font-size: 0.75em;
+
+      &::before { line-height: 18px; }
+    }
+  }
+
+  #viewport.menu-open #sidebar {
+    transform: translate3d(100%, 0, 0);
+    // box-shadow: none;
+  }
+
+  #sidebar-overlay {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); 
+  }
+
+  #loading #loading-status-container {
+    &::before {
+      font-size: 2.5em;
+      background-size: 100px 100px; 
+      padding-top: 100px;
+      letter-spacing: -1px;
+    }
+
+    #loading-page-message { font-style: italic; text-transform: uppercase; }
+  }
+
+  #chat .userlist {
+    background: var(--chat-background);
+  }
+
+  #connect .container, #settings .container, #help .container {
+    margin: auto;
+    align-self: center;
+  }
+}
+
+
+
+/*
+
+  Username colors:
+
+  Set .user.color-{index} to the $username-colors
+  in order. When the end of the list is reached,
+  start over at the beginning.
+
+  You can add/remove colors (up to 32) and they
+  will be automatically distributed through the
+  32 .user.color-{1-32} classes.
+
+  TODO: Set variables rather than the nick
+        colors themselves.
+
+*/
+$username-colors:
+  #EF4657,
+  #FF93A4,
+  #FFB03B,
+  #D5F572,
+  #9fffec,
+  #91A6FF,
+  #b889ff,
+  #ffb4e8,
+  // PICO-8 colors :)
+  // #FF004D, not this one though
+  #FFA300,
+  #FFEC27,
+  #00E436,
+  #29ADFF,
+  #FF77A8,
+  #FFCCAA;
+  
+
+@for $i from 1 through 32 {
+  $color-index: $i % length($username-colors) + 1;
+  $selected-color: nth($username-colors, $color-index);
+  #chat.colored-nicks .user.color-#{$i} {
+    color: $selected-color;
+
+    & + .hostmask {
+      color: $selected-color;
+    }
+
+    & + .hostmask + i {
+      color: $selected-color;
+    }
+  }
+}
+
+
+
+/*
+  Very Slight Gradient™
+  v2.0.0
+
+  Believe it or not, this is the much improved
+  version.
+
+  Creates a very subtle gradient in the chat text
+  between the top and bottom lines approximately
+  visible in the buffer.
+
+*/
+$visible-messages-count: 50;
+$visible-messages-count-mobile: 25;
+
+$brightness-multiplier: 0.5;
+
+$max-brightness-diff: 25;
+
+@mixin brightnessFilter($messages-count, $i) {
+  filter: brightness(100% + ($i / $messages-count) * $max-brightness-diff);
+}
+
+@media (min-width: 769px) {
+  @for $i from 1 through $visible-messages-count {
+    #chat .msg:nth-last-child(#{$i}) {
+      @include brightnessFilter($visible-messages-count, $i);
+    }
+  }
+  #chat .msg:nth-last-child(n+#{$visible-messages-count}) {
+    filter: brightness(125%);
+  }
+}
+
+@media (max-width: 768px) {
+
+  /*
+    This is absolutely crucial. Applying many
+    discrete `filter` rules destroys iOS Safari
+    performance. (10/10/2021, iOS 15.0.1)
+
+    This trick forces hardware acceleration and
+    completely solves the performance problem.
+
+    I expect this will be a problem on more
+    devices. If this solution isn't adequate, we
+    may need to find a new technique for applying
+    the filter gradient.
+
+  */ /* VVVVVVVVVVVVVVVVVV */
+
+  #chat .msg {
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* ^^^^^^^^^^^^^^^^^^^^^ */
+
+  @for $i from 1 through $visible-messages-count-mobile {
+    #chat .msg:nth-last-child(#{$i}) {
+      @include brightnessFilter($visible-messages-count-mobile, $i);
+    }
+  }
+  #chat .msg:nth-last-child(n+#{$visible-messages-count-mobile + 1}) {
+    filter: brightness(125%);
+  }
+}
+
+
+/*
+
+  Fixes for iPhones with curved screens and
+  notches.
+
+  Some reading on the future of CSS:
+
+  https://www.w3.org/TR/css-round-display-1/
+  https://drafts.csswg.org/css-round-display/
+
+  Separate fixes are needed for use inside the
+  Safari app (display-mode: browser) and when
+  added to the home screen as an app
+  (display-mode: standalone).
+
+  I'm using a lot of separate media queries to
+  target specifically iPhones and not all
+  mobiles. Hopefully that works correctly.
+
+*/
+@mixin bottomSafeAreaFix {
+
+  #form {
+    margin-bottom: 50px;
+    // This doesn't seem to be animating anyway.
+    transition: margin-bottom 0.2s;
+  
+    // Remove the safe area gap when the keyboard
+    // is up
+    &:focus-within {
+      margin-bottom: 15px;
+    }
+  }
+
+  #footer {
+    margin-bottom: 40px;
+  }
+}
+
+@mixin bottomSafeAreaFixBrowser {
+  html, body, #viewport, #chat-container {
+    height: 100vh;
+  }
+  #chat-container .messages:last-child {
+    padding-bottom: 70;
+  }
+  #form:focus-within {
+    margin-bottom: 60px !important;
+  }
+}
+
+/* iphone X , XS, 11 Pro, 12 Mini */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (display-mode: standalone) {
+  @include bottomSafeAreaFix()
+}
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (display-mode: browser) {
+  @include bottomSafeAreaFixBrowser()
+}
+
+/* iphone 12, 12 Pro */
+@media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (display-mode: standalone) {
+  @include bottomSafeAreaFix()
+}
+@media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (display-mode: browser) {
+  @include bottomSafeAreaFixBrowser()
+}
+
+/* iphone XR, 11 */
+@media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (display-mode: standalone) {
+  @include bottomSafeAreaFix()
+}
+@media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (display-mode: browser) {
+  @include bottomSafeAreaFixBrowser()
+}
+    
+/* iphone XS Max, 11 Pro Max */
+@media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (display-mode: standalone) {
+  @include bottomSafeAreaFix()
+}
+@media only screen and (min-device-width : 414px) and (max-device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (display-mode: browser) {
+  @include bottomSafeAreaFixBrowser()
+}
+
+/* iphone 12 Pro Max */
+@media only screen and (min-device-width : 428px) and (max-device-height : 926px) and (-webkit-device-pixel-ratio : 3) and (display-mode: standalone) {
+  @include bottomSafeAreaFix()
+}
+@media only screen and (min-device-width : 428px) and (max-device-height : 926px) and (-webkit-device-pixel-ratio : 3) and (display-mode: browser) {
+  @include bottomSafeAreaFixBrowser()
+}

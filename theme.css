@@ -1,0 +1,1119 @@
+@charset "UTF-8";
+/*
+  
+  Chord
+  v1.0.0
+  by easymac
+  https://github.com/easymac/thelounge-theme-chord
+  
+  A darkly elegant theme for The Lounge.
+
+  For The Lounge v4.2.0.
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
+/*
+  CSS variables so they can be overridden
+*/
+:root {
+  --primary-font: Public Sans, sans-serif;
+  --logo-font: DM Serif Display, serif;
+  --chat-background: #2b2e31;
+  --sidebar-background: #222428;
+  --off-black: #171b20;
+  --off-white: #eee;
+  --link-color: #7aafff;
+  --highlight-bg-color: #2f3b4c;
+  --chat-wrap-width: 1200px;
+  --search-background: #27292d; }
+
+/*
+  Animations
+*/
+@keyframes rainbow {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: -500px 0px; } }
+
+/*
+  Global
+*/
+::-webkit-input-placeholder {
+  color: var(--off-white); }
+
+::-webkit-scrollbar {
+  border-radius: 0 !important;
+  width: 3px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0 !important; }
+
+.window {
+  font-family: var(--primary-font);
+  background: var(--chat-background); }
+
+/*
+  Button styles
+*/
+.btn {
+  border: none;
+  background: #abb8c9;
+  color: var(--sidebar-background);
+  border-radius: 8px;
+  text-transform: none;
+  letter-spacing: normal;
+  height: 45px; }
+  .btn:focus, .btn:hover, .btn:active, .btn:disabled {
+    background: var(--off-white);
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: var(--sidebar-background); }
+
+/*
+  Link styles
+*/
+a {
+  color: var(--link-color);
+  text-decoration: underline; }
+  a:hover {
+    color: #88c8ff; }
+  a:visited {
+    color: #6b90c7; }
+    a:visited:hover {
+      color: #88c8ff; }
+  a:focus {
+    color: var(--link-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none; }
+
+/*
+  Mentions popup
+*/
+.mentions-popup {
+  background-color: var(--sidebar-background);
+  color: var(--off-white);
+  font-family: var(--primary-font);
+  padding: 0; }
+  .mentions-popup .mentions-popup-title {
+    font-weight: 700;
+    padding: 60px 15px 20px 15px;
+    background: var(--off-black); }
+  .mentions-popup .btn {
+    height: auto; }
+  .mentions-popup .msg {
+    padding: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--off-black);
+    margin-bottom: 10px; }
+    .mentions-popup .msg .mentions-info {
+      font-style: italic;
+      color: rgba(var(--off-white), 0.8);
+      margin-bottom: 10px; }
+    .mentions-popup .msg .content {
+      background: transparent;
+      font-weight: bold;
+      padding: 0; }
+    .mentions-popup .msg .msg-hide {
+      color: #abb8c9; }
+      .mentions-popup .msg .msg-hide:hover {
+        color: white; }
+
+/*
+  Context menu
+*/
+#context-menu, .textcomplete-menu {
+  background: rgba(var(--off-black), 0.75);
+  border: 1px solid black;
+  backdrop-filter: blur(20px); }
+  #context-menu .context-menu-item, #context-menu .textcomplete-item, .textcomplete-menu .context-menu-item, .textcomplete-menu .textcomplete-item {
+    color: var(--off-white); }
+    #context-menu .context-menu-item a, #context-menu .textcomplete-item a, .textcomplete-menu .context-menu-item a, .textcomplete-menu .textcomplete-item a {
+      color: var(--off-white);
+      text-decoration: none; }
+    #context-menu .context-menu-item.active, #context-menu .textcomplete-item.active, .textcomplete-menu .context-menu-item.active, .textcomplete-menu .textcomplete-item.active {
+      background: rgba(255, 255, 255, 0.1); }
+  #context-menu .context-menu-divider, .textcomplete-menu .context-menu-divider {
+    background: black; }
+
+/*
+  Upper-left logo
+*/
+#sidebar {
+  min-width: 220px;
+  width: 11vw; }
+  #sidebar .logo, #sidebar .logo-inverted {
+    display: none; }
+  #sidebar .logo-container {
+    height: 45px;
+    margin-bottom: 30px; }
+    #sidebar .logo-container:hover::after {
+      font-weight: bold;
+      color: transparent;
+      background: linear-gradient(35deg, white, white, white, white, white, #98A9D7, #8ED2CD, #C2ED98, #F1F487, #FED776, #F59B7C, #FED776, #F1F487, #C2ED98, #8ED2CD, #98A9D7, white, white, white, white);
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-size: 500px 45px;
+      animation: 0.8s rainbow linear; }
+    #sidebar .logo-container::after {
+      content: 'the lounge';
+      font-family: var(--logo-font);
+      font-size: 18px;
+      display: inline-block;
+      color: white;
+      margin: auto auto 0 auto; }
+    #sidebar .logo-container::before {
+      content: ' ';
+      display: block;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 98.73 86.6"><defs><style>.cls-1{fill:url(%23linear-gradient);}.cls-2{fill:url(%23linear-gradient-2);}.cls-3{fill:url(%23linear-gradient-3);}</style><linearGradient id="linear-gradient" x1="62.28" y1="33.78" x2="19.21" y2="8.92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23ccc"/><stop offset="0" stop-color="%23cdcdcd"/><stop offset="0.02" stop-color="%23dedede"/><stop offset="0.05" stop-color="%23e9e9e9"/><stop offset="0.09" stop-color="%23f0f0f0"/><stop offset="0.19" stop-color="%23f2f2f2"/></linearGradient><linearGradient id="linear-gradient-2" x1="34.66" y1="36.88" x2="34.66" y2="86.6" xlink:href="%23linear-gradient"/><linearGradient id="linear-gradient-3" x1="53.79" y1="63.8" x2="96.85" y2="38.94" xlink:href="%23linear-gradient"/></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="cls-1" d="M76.88,8.47,60.48,36.88h-55a4.11,4.11,0,0,0-3.56,2.06l20-34.56v0l1.33-2.3A4.12,4.12,0,0,1,26.74,0H72a4.09,4.09,0,0,1,3.56,2.06l1.33,2.3v0A4.12,4.12,0,0,1,76.88,8.47Z"/><path class="cls-2" d="M69.32,86.6H26.74a4.12,4.12,0,0,1-3.57-2.06L.55,45.36a4.15,4.15,0,0,1,0-4.12l1.33-2.3a4.11,4.11,0,0,1,3.56-2.06h32.8L49.36,56.13l16.4,28.41A4.12,4.12,0,0,0,69.32,86.6Z"/><path class="cls-3" d="M98.17,45.36l-14,24.16L94.09,86.6H69.33a4.09,4.09,0,0,1-3.56-2.06L49.36,56.13,60.48,36.88,76.89,8.47a4.17,4.17,0,0,0,0-4.09L96.84,38.94l1.33,2.3A4.1,4.1,0,0,1,98.17,45.36Z"/></g></g></svg>');
+      width: 25px;
+      height: 25px;
+      background-repeat: no-repeat;
+      margin: auto;
+      margin-top: 20px; }
+
+/*
+  Network list
+*/
+#sidebar {
+  padding: 0px 30px;
+  background: #222428;
+  font-family: var(--primary-font); }
+  #sidebar .scrollable-area {
+    overflow-x: visible; }
+  #sidebar .jump-to-input {
+    margin: 0 0 15px 0; }
+    #sidebar .jump-to-input .input {
+      background: var(--sidebar-background);
+      color: var(--off-white);
+      border: 1px solid var(--chat-background);
+      border-radius: 10px;
+      padding: 0 15px; }
+      #sidebar .jump-to-input .input::placeholder {
+        color: #abb8c9; }
+      #sidebar .jump-to-input .input:focus {
+        box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5); }
+    #sidebar .jump-to-input::before {
+      color: #55606c; }
+  #sidebar .lobby-wrap {
+    order: 1;
+    flex-grow: 0; }
+  #sidebar .collapse-network {
+    opacity: 0.4;
+    order: 2;
+    margin-left: auto; }
+    #sidebar .collapse-network:hover {
+      opacity: 1; }
+  #sidebar .add-channel-tooltip,
+  #sidebar .channel-list-item .badge,
+  #sidebar .channel-list-item,
+  #sidebar .close-tooltip {
+    order: 3; }
+  #sidebar .network .collapse-network-icon {
+    background: white;
+    border-radius: 999px;
+    font-size: 0.8em;
+    display: block;
+    width: 13px;
+    height: 13px;
+    position: relative; }
+    #sidebar .network .collapse-network-icon:before {
+      color: var(--chat-background);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      line-height: 13px; }
+  #sidebar .add-channel-tooltip {
+    line-height: normal; }
+  #sidebar .badge {
+    line-height: 1; }
+  #sidebar .channel-list-item {
+    padding: 6px 0 6px 0px; }
+    #sidebar .channel-list-item:hover {
+      background: none; }
+    #sidebar .channel-list-item.active {
+      background: none; }
+    #sidebar .channel-list-item[data-type=lobby] {
+      font-size: 1.3em;
+      color: var(--off-white);
+      font-weight: 700; }
+      #sidebar .channel-list-item[data-type=lobby]:hover {
+        color: white; }
+    #sidebar .channel-list-item .name {
+      -webkit-mask-image: none;
+      mask-image: none; }
+
+/*
+  Drag & drop styles
+*/
+.ui-sortable-ghost::after,
+.ui-sortable-dragging-touch-cue:not(.ui-sortable-dragging)::after {
+  background: #171b20; }
+
+/*
+  Sidebar footer
+*/
+#footer {
+  margin-bottom: 10px; }
+  #footer button {
+    color: #abb8c9;
+    margin: 0 3px;
+    width: 60px; }
+    #footer button:hover {
+      background: rgba(171, 184, 201, 0.1); }
+    #footer button.active {
+      background: rgba(var(--link-color), 0.1); }
+    #footer button.active:hover {
+      background: rgba(var(--link-color), 0.1); }
+
+/*
+  Chat message input box
+*/
+#form {
+  background: var(--chat-background);
+  border-top: 0;
+  padding: 10px;
+  margin: 0 10px 10px 10px; }
+  #form::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #373a40;
+    content: ' ';
+    z-index: 1;
+    border-radius: 10px; }
+  #form * {
+    z-index: 1; }
+  #form #input {
+    background: transparent;
+    height: 25px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0px 10px;
+    color: var(--off-white); }
+    #form #input::placeholder {
+      color: rgba(var(--off-white), 0.5); }
+  #form #submit, #form #upload {
+    color: #abb8c9; }
+
+/*
+  Loading splash
+*/
+#loading {
+  color: var(--off-white);
+  background: var(--chat-background);
+  font-family: var(--primary-font); }
+  #loading .logo {
+    display: none; }
+  #loading #loading-status-container * {
+    z-index: 2; }
+  #loading #loading-status-container::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 98.73 86.6"><defs><style>.cls-1{fill:url(%23linear-gradient);}.cls-2{fill:url(%23linear-gradient-2);}.cls-3{fill:url(%23linear-gradient-3);}</style><linearGradient id="linear-gradient" x1="62.28" y1="33.78" x2="19.21" y2="8.92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23ccc"/><stop offset="0" stop-color="%23cdcdcd"/><stop offset="0.02" stop-color="%23dedede"/><stop offset="0.05" stop-color="%23e9e9e9"/><stop offset="0.09" stop-color="%23f0f0f0"/><stop offset="0.19" stop-color="%23f2f2f2"/></linearGradient><linearGradient id="linear-gradient-2" x1="34.66" y1="36.88" x2="34.66" y2="86.6" xlink:href="%23linear-gradient"/><linearGradient id="linear-gradient-3" x1="53.79" y1="63.8" x2="96.85" y2="38.94" xlink:href="%23linear-gradient"/></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="cls-1" d="M76.88,8.47,60.48,36.88h-55a4.11,4.11,0,0,0-3.56,2.06l20-34.56v0l1.33-2.3A4.12,4.12,0,0,1,26.74,0H72a4.09,4.09,0,0,1,3.56,2.06l1.33,2.3v0A4.12,4.12,0,0,1,76.88,8.47Z"/><path class="cls-2" d="M69.32,86.6H26.74a4.12,4.12,0,0,1-3.57-2.06L.55,45.36a4.15,4.15,0,0,1,0-4.12l1.33-2.3a4.11,4.11,0,0,1,3.56-2.06h32.8L49.36,56.13l16.4,28.41A4.12,4.12,0,0,0,69.32,86.6Z"/><path class="cls-3" d="M98.17,45.36l-14,24.16L94.09,86.6H69.33a4.09,4.09,0,0,1-3.56-2.06L49.36,56.13,60.48,36.88,76.89,8.47a4.17,4.17,0,0,0,0-4.09L96.84,38.94l1.33,2.3A4.1,4.1,0,0,1,98.17,45.36Z"/></g></g></svg>');
+    margin: 0 auto;
+    padding-top: 250px;
+    background-repeat: no-repeat;
+    background-size: 250px 250px;
+    background-position: top center;
+    content: 'the lounge';
+    font-family: var(--logo-font);
+    color: var(--off-white);
+    vertical-align: middle;
+    font-size: 6em;
+    letter-spacing: -4px;
+    z-index: 2; }
+
+/*
+  Topic and upper-right buttons
+*/
+#chat .header {
+  border-bottom: none;
+  align-items: flex-end;
+  line-height: normal;
+  padding-bottom: 8px; }
+  #chat .header .title {
+    font-weight: 700;
+    font-size: 1.1em; }
+  #chat .header .topic {
+    color: #abb8c9;
+    white-space: nowrap; }
+  #chat .header button {
+    position: relative;
+    top: 8px;
+    color: #abb8c9; }
+
+/*
+  Styling for message buffer
+*/
+#chat {
+  background-color: var(--chat-background);
+  color: var(--off-white);
+  margin-bottom: 10px; }
+  #chat .chat-view[data-type=channel] .msg.highlight {
+    border-left: none;
+    background-color: var(--highlight-bg-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; }
+    #chat .chat-view[data-type=channel] .msg.highlight .content {
+      border-left: 0; }
+    #chat .chat-view[data-type=channel] .msg.highlight .time {
+      padding-left: 0;
+      color: var(--off-white);
+      padding-left: 10px;
+      padding-top: 5px; }
+  #chat .messages {
+    padding-bottom: 0; }
+  #chat .msg {
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1px;
+    max-width: var(--chat-wrap-width); }
+    #chat .msg.self .content {
+      color: #fff; }
+    #chat .msg .hostmask, #chat .msg .hostmask + i {
+      filter: saturate(30%) brightness(102%); }
+    #chat .msg .from {
+      font-weight: 500; }
+    #chat .msg[data-type=away] .content,
+    #chat .msg[data-type=back] .content,
+    #chat .msg[data-type=condensed] .content,
+    #chat .msg[data-type=join] .content,
+    #chat .msg[data-type=kick] .content,
+    #chat .msg[data-type=mode] .content,
+    #chat .msg[data-type=nick] .content,
+    #chat .msg[data-type=part] .content,
+    #chat .msg[data-type=quit] .content,
+    #chat .msg[data-type=topic] .content,
+    #chat .msg[data-type=topic_set_by] .content {
+      color: #abb8c9; }
+    #chat .msg[data-type=notice] .content {
+      color: #abb8c9; }
+    #chat .msg[data-type=notice] .time {
+      color: #55606c; }
+    #chat .msg[data-type=join] .from:before {
+      color: rgba(171, 184, 201, 0.8);
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85em;
+      content: '\f061'; }
+    #chat .msg[data-type=part] .from:before, #chat .msg[data-type=quit] .from:before {
+      color: #55606c;
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85em;
+      content: '\f061'; }
+    #chat .msg[data-type=nick] .from:before,
+    #chat .msg[data-type=topic] .from:before {
+      color: rgba(171, 184, 201, 0.8); }
+  #chat .content {
+    border-left: none; }
+  #chat .time {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #55606c;
+    padding-left: 10px; }
+  #chat .unread-marker, #chat .date-marker {
+    text-align: right;
+    font-weight: normal; }
+    #chat .unread-marker::before, #chat .date-marker::before {
+      border-top: 1px solid #55606c; }
+    #chat .unread-marker .unread-marker-text, #chat .unread-marker .date-marker-text, #chat .date-marker .unread-marker-text, #chat .date-marker .date-marker-text {
+      color: var(--sidebar-background);
+      display: inline-block;
+      margin-right: auto;
+      text-align: right; }
+      #chat .unread-marker .unread-marker-text::before, #chat .unread-marker .date-marker-text::before, #chat .date-marker .unread-marker-text::before, #chat .date-marker .date-marker-text::before {
+        background: transparent;
+        color: white;
+        background: #55606c;
+        border-radius: 999px;
+        padding: 3px 9px; }
+  #chat .scroll-down-arrow {
+    border-radius: 30%;
+    background: #abb8c9;
+    color: var(--sidebar-background);
+    border: none;
+    width: 42px;
+    height: 42px;
+    line-height: 42px; }
+
+/*
+  Embedded previews
+*/
+#chat .toggle-content {
+  background: var(--sidebar-background);
+  padding: 15px; }
+  #chat .toggle-content .more {
+    color: var(--link-color); }
+  #chat .toggle-content .thumb {
+    max-height: 110px;
+    max-width: none; }
+
+/*
+  Userlist
+*/
+#chat .userlist {
+  border: none; }
+  #chat .userlist .user-mode::before {
+    background: transparent;
+    color: #202226;
+    background: #55606c;
+    margin-right: auto;
+    border-radius: 999px;
+    display: inline-block;
+    padding: 0 8px;
+    margin-left: 16px;
+    margin-bottom: 4px; }
+  #chat .userlist .count {
+    background: transparent;
+    color: var(--off-white);
+    padding: 15px;
+    margin-bottom: 30px; }
+    #chat .userlist .count:before {
+      right: 26px; }
+  #chat .userlist .search {
+    background: var(--search-background);
+    border-radius: 12px;
+    color: var(--off-white); }
+    #chat .userlist .search:focus {
+      background: var(--sidebar-background); }
+    #chat .userlist .search::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      color: white;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f2f2f2'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+      height: 20px;
+      width: 20px;
+      position: relative;
+      top: -1px; }
+
+/*
+  Menu pages
+*/
+#connect .container, #settings .container, #help .container {
+  color: var(--off-white);
+  font-family: var(--primary-font);
+  align-self: auto;
+  margin-top: 50px;
+  margin-left: 100px; }
+  #connect .container h1, #connect .container h2, #connect .container h3, #settings .container h1, #settings .container h2, #settings .container h3, #help .container h1, #help .container h2, #help .container h3 {
+    font-family: var(--primary-font);
+    color: var(--off-white);
+    font-weight: 700; }
+  #connect .container h2, #settings .container h2, #help .container h2 {
+    border-bottom: none;
+    position: relative;
+    margin-bottom: 26px; }
+    #connect .container h2::after, #settings .container h2::after, #help .container h2::after {
+      position: absolute;
+      left: 0;
+      right: auto;
+      bottom: -6px;
+      height: 2px;
+      width: 30px;
+      content: ' ';
+      display: block;
+      background: #abb8c9; }
+  #connect .container .input, #settings .container .input, #help .container .input {
+    background: var(--sidebar-background);
+    color: var(--off-white);
+    border: 1px solid var(--off-black);
+    border-radius: 10px;
+    padding: 0 15px;
+    height: 50px; }
+    #connect .container .input:focus, #settings .container .input:focus, #help .container .input:focus {
+      box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5); }
+  #connect .container textarea.input, #settings .container textarea.input, #help .container textarea.input {
+    height: 100px; }
+
+/*
+
+  Styles for mobile UI.
+  TODO: Determine if this query is sufficient.
+
+*/
+@media (max-width: 768px) {
+  #sidebar {
+    width: 80%;
+    left: -80%;
+    background-color: rgba(var(--chat-background), 0.5) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); }
+    #sidebar .logo-container::before {
+      font-size: 2em; }
+    #sidebar .channel-list-item {
+      font-size: 1.05em;
+      padding-bottom: 6px; }
+      #sidebar .channel-list-item[data-type=lobby] {
+        font-size: 2.0em; }
+      #sidebar .channel-list-item:before {
+        font-size: 0.75em;
+        line-height: 21px; }
+    #sidebar .network .collapse-network-icon {
+      width: 18px;
+      height: 18px;
+      font-size: 0.75em; }
+      #sidebar .network .collapse-network-icon::before {
+        line-height: 18px; }
+  #viewport.menu-open #sidebar {
+    transform: translate3d(100%, 0, 0); }
+  #sidebar-overlay {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); }
+  #loading #loading-status-container::before {
+    font-size: 2.5em;
+    background-size: 100px 100px;
+    padding-top: 100px;
+    letter-spacing: -1px; }
+  #loading #loading-status-container #loading-page-message {
+    font-style: italic;
+    text-transform: uppercase; }
+  #chat .userlist {
+    background: var(--chat-background); }
+  #connect .container, #settings .container, #help .container {
+    margin: auto;
+    align-self: center; } }
+
+/*
+
+  Username colors:
+
+  Set .user.color-{index} to the $username-colors
+  in order. When the end of the list is reached,
+  start over at the beginning.
+
+  You can add/remove colors (up to 32) and they
+  will be automatically distributed through the
+  32 .user.color-{1-32} classes.
+
+  TODO: Set variables rather than the nick
+        colors themselves.
+
+*/
+#chat.colored-nicks .user.color-1 {
+  color: #FF93A4; }
+  #chat.colored-nicks .user.color-1 + .hostmask {
+    color: #FF93A4; }
+  #chat.colored-nicks .user.color-1 + .hostmask + i {
+    color: #FF93A4; }
+
+#chat.colored-nicks .user.color-2 {
+  color: #FFB03B; }
+  #chat.colored-nicks .user.color-2 + .hostmask {
+    color: #FFB03B; }
+  #chat.colored-nicks .user.color-2 + .hostmask + i {
+    color: #FFB03B; }
+
+#chat.colored-nicks .user.color-3 {
+  color: #D5F572; }
+  #chat.colored-nicks .user.color-3 + .hostmask {
+    color: #D5F572; }
+  #chat.colored-nicks .user.color-3 + .hostmask + i {
+    color: #D5F572; }
+
+#chat.colored-nicks .user.color-4 {
+  color: #9fffec; }
+  #chat.colored-nicks .user.color-4 + .hostmask {
+    color: #9fffec; }
+  #chat.colored-nicks .user.color-4 + .hostmask + i {
+    color: #9fffec; }
+
+#chat.colored-nicks .user.color-5 {
+  color: #91A6FF; }
+  #chat.colored-nicks .user.color-5 + .hostmask {
+    color: #91A6FF; }
+  #chat.colored-nicks .user.color-5 + .hostmask + i {
+    color: #91A6FF; }
+
+#chat.colored-nicks .user.color-6 {
+  color: #b889ff; }
+  #chat.colored-nicks .user.color-6 + .hostmask {
+    color: #b889ff; }
+  #chat.colored-nicks .user.color-6 + .hostmask + i {
+    color: #b889ff; }
+
+#chat.colored-nicks .user.color-7 {
+  color: #ffb4e8; }
+  #chat.colored-nicks .user.color-7 + .hostmask {
+    color: #ffb4e8; }
+  #chat.colored-nicks .user.color-7 + .hostmask + i {
+    color: #ffb4e8; }
+
+#chat.colored-nicks .user.color-8 {
+  color: #FFA300; }
+  #chat.colored-nicks .user.color-8 + .hostmask {
+    color: #FFA300; }
+  #chat.colored-nicks .user.color-8 + .hostmask + i {
+    color: #FFA300; }
+
+#chat.colored-nicks .user.color-9 {
+  color: #FFEC27; }
+  #chat.colored-nicks .user.color-9 + .hostmask {
+    color: #FFEC27; }
+  #chat.colored-nicks .user.color-9 + .hostmask + i {
+    color: #FFEC27; }
+
+#chat.colored-nicks .user.color-10 {
+  color: #00E436; }
+  #chat.colored-nicks .user.color-10 + .hostmask {
+    color: #00E436; }
+  #chat.colored-nicks .user.color-10 + .hostmask + i {
+    color: #00E436; }
+
+#chat.colored-nicks .user.color-11 {
+  color: #29ADFF; }
+  #chat.colored-nicks .user.color-11 + .hostmask {
+    color: #29ADFF; }
+  #chat.colored-nicks .user.color-11 + .hostmask + i {
+    color: #29ADFF; }
+
+#chat.colored-nicks .user.color-12 {
+  color: #FF77A8; }
+  #chat.colored-nicks .user.color-12 + .hostmask {
+    color: #FF77A8; }
+  #chat.colored-nicks .user.color-12 + .hostmask + i {
+    color: #FF77A8; }
+
+#chat.colored-nicks .user.color-13 {
+  color: #FFCCAA; }
+  #chat.colored-nicks .user.color-13 + .hostmask {
+    color: #FFCCAA; }
+  #chat.colored-nicks .user.color-13 + .hostmask + i {
+    color: #FFCCAA; }
+
+#chat.colored-nicks .user.color-14 {
+  color: #EF4657; }
+  #chat.colored-nicks .user.color-14 + .hostmask {
+    color: #EF4657; }
+  #chat.colored-nicks .user.color-14 + .hostmask + i {
+    color: #EF4657; }
+
+#chat.colored-nicks .user.color-15 {
+  color: #FF93A4; }
+  #chat.colored-nicks .user.color-15 + .hostmask {
+    color: #FF93A4; }
+  #chat.colored-nicks .user.color-15 + .hostmask + i {
+    color: #FF93A4; }
+
+#chat.colored-nicks .user.color-16 {
+  color: #FFB03B; }
+  #chat.colored-nicks .user.color-16 + .hostmask {
+    color: #FFB03B; }
+  #chat.colored-nicks .user.color-16 + .hostmask + i {
+    color: #FFB03B; }
+
+#chat.colored-nicks .user.color-17 {
+  color: #D5F572; }
+  #chat.colored-nicks .user.color-17 + .hostmask {
+    color: #D5F572; }
+  #chat.colored-nicks .user.color-17 + .hostmask + i {
+    color: #D5F572; }
+
+#chat.colored-nicks .user.color-18 {
+  color: #9fffec; }
+  #chat.colored-nicks .user.color-18 + .hostmask {
+    color: #9fffec; }
+  #chat.colored-nicks .user.color-18 + .hostmask + i {
+    color: #9fffec; }
+
+#chat.colored-nicks .user.color-19 {
+  color: #91A6FF; }
+  #chat.colored-nicks .user.color-19 + .hostmask {
+    color: #91A6FF; }
+  #chat.colored-nicks .user.color-19 + .hostmask + i {
+    color: #91A6FF; }
+
+#chat.colored-nicks .user.color-20 {
+  color: #b889ff; }
+  #chat.colored-nicks .user.color-20 + .hostmask {
+    color: #b889ff; }
+  #chat.colored-nicks .user.color-20 + .hostmask + i {
+    color: #b889ff; }
+
+#chat.colored-nicks .user.color-21 {
+  color: #ffb4e8; }
+  #chat.colored-nicks .user.color-21 + .hostmask {
+    color: #ffb4e8; }
+  #chat.colored-nicks .user.color-21 + .hostmask + i {
+    color: #ffb4e8; }
+
+#chat.colored-nicks .user.color-22 {
+  color: #FFA300; }
+  #chat.colored-nicks .user.color-22 + .hostmask {
+    color: #FFA300; }
+  #chat.colored-nicks .user.color-22 + .hostmask + i {
+    color: #FFA300; }
+
+#chat.colored-nicks .user.color-23 {
+  color: #FFEC27; }
+  #chat.colored-nicks .user.color-23 + .hostmask {
+    color: #FFEC27; }
+  #chat.colored-nicks .user.color-23 + .hostmask + i {
+    color: #FFEC27; }
+
+#chat.colored-nicks .user.color-24 {
+  color: #00E436; }
+  #chat.colored-nicks .user.color-24 + .hostmask {
+    color: #00E436; }
+  #chat.colored-nicks .user.color-24 + .hostmask + i {
+    color: #00E436; }
+
+#chat.colored-nicks .user.color-25 {
+  color: #29ADFF; }
+  #chat.colored-nicks .user.color-25 + .hostmask {
+    color: #29ADFF; }
+  #chat.colored-nicks .user.color-25 + .hostmask + i {
+    color: #29ADFF; }
+
+#chat.colored-nicks .user.color-26 {
+  color: #FF77A8; }
+  #chat.colored-nicks .user.color-26 + .hostmask {
+    color: #FF77A8; }
+  #chat.colored-nicks .user.color-26 + .hostmask + i {
+    color: #FF77A8; }
+
+#chat.colored-nicks .user.color-27 {
+  color: #FFCCAA; }
+  #chat.colored-nicks .user.color-27 + .hostmask {
+    color: #FFCCAA; }
+  #chat.colored-nicks .user.color-27 + .hostmask + i {
+    color: #FFCCAA; }
+
+#chat.colored-nicks .user.color-28 {
+  color: #EF4657; }
+  #chat.colored-nicks .user.color-28 + .hostmask {
+    color: #EF4657; }
+  #chat.colored-nicks .user.color-28 + .hostmask + i {
+    color: #EF4657; }
+
+#chat.colored-nicks .user.color-29 {
+  color: #FF93A4; }
+  #chat.colored-nicks .user.color-29 + .hostmask {
+    color: #FF93A4; }
+  #chat.colored-nicks .user.color-29 + .hostmask + i {
+    color: #FF93A4; }
+
+#chat.colored-nicks .user.color-30 {
+  color: #FFB03B; }
+  #chat.colored-nicks .user.color-30 + .hostmask {
+    color: #FFB03B; }
+  #chat.colored-nicks .user.color-30 + .hostmask + i {
+    color: #FFB03B; }
+
+#chat.colored-nicks .user.color-31 {
+  color: #D5F572; }
+  #chat.colored-nicks .user.color-31 + .hostmask {
+    color: #D5F572; }
+  #chat.colored-nicks .user.color-31 + .hostmask + i {
+    color: #D5F572; }
+
+#chat.colored-nicks .user.color-32 {
+  color: #9fffec; }
+  #chat.colored-nicks .user.color-32 + .hostmask {
+    color: #9fffec; }
+  #chat.colored-nicks .user.color-32 + .hostmask + i {
+    color: #9fffec; }
+
+/*
+  Very Slight Gradient™
+  v2.0.0
+
+  Believe it or not, this is the much improved
+  version.
+
+  Creates a very subtle gradient in the chat text
+  between the top and bottom lines approximately
+  visible in the buffer.
+
+*/
+@media (min-width: 769px) {
+  #chat .msg:nth-last-child(1) {
+    filter: brightness(100.5%); }
+  #chat .msg:nth-last-child(2) {
+    filter: brightness(101%); }
+  #chat .msg:nth-last-child(3) {
+    filter: brightness(101.5%); }
+  #chat .msg:nth-last-child(4) {
+    filter: brightness(102%); }
+  #chat .msg:nth-last-child(5) {
+    filter: brightness(102.5%); }
+  #chat .msg:nth-last-child(6) {
+    filter: brightness(103%); }
+  #chat .msg:nth-last-child(7) {
+    filter: brightness(103.5%); }
+  #chat .msg:nth-last-child(8) {
+    filter: brightness(104%); }
+  #chat .msg:nth-last-child(9) {
+    filter: brightness(104.5%); }
+  #chat .msg:nth-last-child(10) {
+    filter: brightness(105%); }
+  #chat .msg:nth-last-child(11) {
+    filter: brightness(105.5%); }
+  #chat .msg:nth-last-child(12) {
+    filter: brightness(106%); }
+  #chat .msg:nth-last-child(13) {
+    filter: brightness(106.5%); }
+  #chat .msg:nth-last-child(14) {
+    filter: brightness(107%); }
+  #chat .msg:nth-last-child(15) {
+    filter: brightness(107.5%); }
+  #chat .msg:nth-last-child(16) {
+    filter: brightness(108%); }
+  #chat .msg:nth-last-child(17) {
+    filter: brightness(108.5%); }
+  #chat .msg:nth-last-child(18) {
+    filter: brightness(109%); }
+  #chat .msg:nth-last-child(19) {
+    filter: brightness(109.5%); }
+  #chat .msg:nth-last-child(20) {
+    filter: brightness(110%); }
+  #chat .msg:nth-last-child(21) {
+    filter: brightness(110.5%); }
+  #chat .msg:nth-last-child(22) {
+    filter: brightness(111%); }
+  #chat .msg:nth-last-child(23) {
+    filter: brightness(111.5%); }
+  #chat .msg:nth-last-child(24) {
+    filter: brightness(112%); }
+  #chat .msg:nth-last-child(25) {
+    filter: brightness(112.5%); }
+  #chat .msg:nth-last-child(26) {
+    filter: brightness(113%); }
+  #chat .msg:nth-last-child(27) {
+    filter: brightness(113.5%); }
+  #chat .msg:nth-last-child(28) {
+    filter: brightness(114%); }
+  #chat .msg:nth-last-child(29) {
+    filter: brightness(114.5%); }
+  #chat .msg:nth-last-child(30) {
+    filter: brightness(115%); }
+  #chat .msg:nth-last-child(31) {
+    filter: brightness(115.5%); }
+  #chat .msg:nth-last-child(32) {
+    filter: brightness(116%); }
+  #chat .msg:nth-last-child(33) {
+    filter: brightness(116.5%); }
+  #chat .msg:nth-last-child(34) {
+    filter: brightness(117%); }
+  #chat .msg:nth-last-child(35) {
+    filter: brightness(117.5%); }
+  #chat .msg:nth-last-child(36) {
+    filter: brightness(118%); }
+  #chat .msg:nth-last-child(37) {
+    filter: brightness(118.5%); }
+  #chat .msg:nth-last-child(38) {
+    filter: brightness(119%); }
+  #chat .msg:nth-last-child(39) {
+    filter: brightness(119.5%); }
+  #chat .msg:nth-last-child(40) {
+    filter: brightness(120%); }
+  #chat .msg:nth-last-child(41) {
+    filter: brightness(120.5%); }
+  #chat .msg:nth-last-child(42) {
+    filter: brightness(121%); }
+  #chat .msg:nth-last-child(43) {
+    filter: brightness(121.5%); }
+  #chat .msg:nth-last-child(44) {
+    filter: brightness(122%); }
+  #chat .msg:nth-last-child(45) {
+    filter: brightness(122.5%); }
+  #chat .msg:nth-last-child(46) {
+    filter: brightness(123%); }
+  #chat .msg:nth-last-child(47) {
+    filter: brightness(123.5%); }
+  #chat .msg:nth-last-child(48) {
+    filter: brightness(124%); }
+  #chat .msg:nth-last-child(49) {
+    filter: brightness(124.5%); }
+  #chat .msg:nth-last-child(50) {
+    filter: brightness(125%); }
+  #chat .msg:nth-last-child(n+50) {
+    filter: brightness(125%); } }
+
+@media (max-width: 768px) {
+  /*
+    This is absolutely crucial. Applying many
+    discrete `filter` rules destroys iOS Safari
+    performance. (10/10/2021, iOS 15.0.1)
+
+    This trick forces hardware acceleration and
+    completely solves the performance problem.
+
+    I expect this will be a problem on more
+    devices. If this solution isn't adequate, we
+    may need to find a new technique for applying
+    the filter gradient.
+
+  */
+  /* VVVVVVVVVVVVVVVVVV */
+  #chat .msg {
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden; }
+  /* ^^^^^^^^^^^^^^^^^^^^^ */
+  #chat .msg:nth-last-child(1) {
+    filter: brightness(101%); }
+  #chat .msg:nth-last-child(2) {
+    filter: brightness(102%); }
+  #chat .msg:nth-last-child(3) {
+    filter: brightness(103%); }
+  #chat .msg:nth-last-child(4) {
+    filter: brightness(104%); }
+  #chat .msg:nth-last-child(5) {
+    filter: brightness(105%); }
+  #chat .msg:nth-last-child(6) {
+    filter: brightness(106%); }
+  #chat .msg:nth-last-child(7) {
+    filter: brightness(107%); }
+  #chat .msg:nth-last-child(8) {
+    filter: brightness(108%); }
+  #chat .msg:nth-last-child(9) {
+    filter: brightness(109%); }
+  #chat .msg:nth-last-child(10) {
+    filter: brightness(110%); }
+  #chat .msg:nth-last-child(11) {
+    filter: brightness(111%); }
+  #chat .msg:nth-last-child(12) {
+    filter: brightness(112%); }
+  #chat .msg:nth-last-child(13) {
+    filter: brightness(113%); }
+  #chat .msg:nth-last-child(14) {
+    filter: brightness(114%); }
+  #chat .msg:nth-last-child(15) {
+    filter: brightness(115%); }
+  #chat .msg:nth-last-child(16) {
+    filter: brightness(116%); }
+  #chat .msg:nth-last-child(17) {
+    filter: brightness(117%); }
+  #chat .msg:nth-last-child(18) {
+    filter: brightness(118%); }
+  #chat .msg:nth-last-child(19) {
+    filter: brightness(119%); }
+  #chat .msg:nth-last-child(20) {
+    filter: brightness(120%); }
+  #chat .msg:nth-last-child(21) {
+    filter: brightness(121%); }
+  #chat .msg:nth-last-child(22) {
+    filter: brightness(122%); }
+  #chat .msg:nth-last-child(23) {
+    filter: brightness(123%); }
+  #chat .msg:nth-last-child(24) {
+    filter: brightness(124%); }
+  #chat .msg:nth-last-child(25) {
+    filter: brightness(125%); }
+  #chat .msg:nth-last-child(n+26) {
+    filter: brightness(125%); } }
+
+/*
+
+  Fixes for iPhones with curved screens and
+  notches.
+
+  Some reading on the future of CSS:
+
+  https://www.w3.org/TR/css-round-display-1/
+  https://drafts.csswg.org/css-round-display/
+
+  Separate fixes are needed for use inside the
+  Safari app (display-mode: browser) and when
+  added to the home screen as an app
+  (display-mode: standalone).
+
+  I'm using a lot of separate media queries to
+  target specifically iPhones and not all
+  mobiles. Hopefully that works correctly.
+
+*/
+/* iphone X , XS, 11 Pro, 12 Mini */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (display-mode: standalone) {
+  #form {
+    margin-bottom: 50px;
+    transition: margin-bottom 0.2s; }
+    #form:focus-within {
+      margin-bottom: 15px; }
+  #footer {
+    margin-bottom: 40px; } }
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (display-mode: browser) {
+  html, body, #viewport, #chat-container {
+    height: 100vh; }
+  #chat-container .messages:last-child {
+    padding-bottom: 70; }
+  #form:focus-within {
+    margin-bottom: 60px !important; } }
+
+/* iphone 12, 12 Pro */
+@media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (display-mode: standalone) {
+  #form {
+    margin-bottom: 50px;
+    transition: margin-bottom 0.2s; }
+    #form:focus-within {
+      margin-bottom: 15px; }
+  #footer {
+    margin-bottom: 40px; } }
+
+@media only screen and (min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (display-mode: browser) {
+  html, body, #viewport, #chat-container {
+    height: 100vh; }
+  #chat-container .messages:last-child {
+    padding-bottom: 70; }
+  #form:focus-within {
+    margin-bottom: 60px !important; } }
+
+/* iphone XR, 11 */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (display-mode: standalone) {
+  #form {
+    margin-bottom: 50px;
+    transition: margin-bottom 0.2s; }
+    #form:focus-within {
+      margin-bottom: 15px; }
+  #footer {
+    margin-bottom: 40px; } }
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (display-mode: browser) {
+  html, body, #viewport, #chat-container {
+    height: 100vh; }
+  #chat-container .messages:last-child {
+    padding-bottom: 70; }
+  #form:focus-within {
+    margin-bottom: 60px !important; } }
+
+/* iphone XS Max, 11 Pro Max */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (display-mode: standalone) {
+  #form {
+    margin-bottom: 50px;
+    transition: margin-bottom 0.2s; }
+    #form:focus-within {
+      margin-bottom: 15px; }
+  #footer {
+    margin-bottom: 40px; } }
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (display-mode: browser) {
+  html, body, #viewport, #chat-container {
+    height: 100vh; }
+  #chat-container .messages:last-child {
+    padding-bottom: 70; }
+  #form:focus-within {
+    margin-bottom: 60px !important; } }
+
+/* iphone 12 Pro Max */
+@media only screen and (min-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (display-mode: standalone) {
+  #form {
+    margin-bottom: 50px;
+    transition: margin-bottom 0.2s; }
+    #form:focus-within {
+      margin-bottom: 15px; }
+  #footer {
+    margin-bottom: 40px; } }
+
+@media only screen and (min-device-width: 428px) and (max-device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (display-mode: browser) {
+  html, body, #viewport, #chat-container {
+    height: 100vh; }
+  #chat-container .messages:last-child {
+    padding-bottom: 70; }
+  #form:focus-within {
+    margin-bottom: 60px !important; } }
