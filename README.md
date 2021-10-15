@@ -56,3 +56,4 @@ Feel free to take a crack at any of these that interest you:
 - **Create GitHub Actions**: Triggers to automatically build the CSS file, bump the version number, and release on GitHub would be really awesome.
 - **Design a light mode**: I would love for the theme to respect a user's `prefers-color-scheme` setting eventually, but a light mode needs to be created first. This could be achieved by implementing better CSS variable integration into the stylesheet, overriding the dark colors, and making necessary adjustments for legibility.
 - **Update for master branch (v4.3.0)**: I have no idea when this will be released, but I'd like for the theme to be as prepared as possible by that time.
+- **Add a GitHub Page**: It'd be cute, and I would like this package to show up when you search for "thelounge dark theme"
