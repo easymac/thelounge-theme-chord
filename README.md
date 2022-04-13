@@ -8,7 +8,7 @@ Chord is designed to offer a pleasant visual revamp with specific improvements i
 ## Installation
 If you installed The Lounge with a package manager:
 ```
-thelounge add thelounge-theme-chord
+thelounge install thelounge-theme-chord
 ```
 
 If you installed The Lounge from source:
