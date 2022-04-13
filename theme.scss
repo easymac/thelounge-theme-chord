@@ -1,13 +1,13 @@
 /*
   
   Chord
-  v1.0.1
+  v1.1.0
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
   A darkly elegant theme for The Lounge.
 
-  For The Lounge v4.2.0.
+  For The Lounge v4.3.0.
 
 */
 
@@ -20,7 +20,7 @@ $svg-x: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' vie
 
 $old-bg: #202226;
 
-$public-sans: 'Public Sans', sans-serif;
+$public-sans: 'Comic Sans', cursive;
 $dm-serif: 'DM Serif Display', serif;
 $dark-background: #2b2e31;
 $darker-background: #222428;
@@ -51,7 +51,6 @@ $chat-wrap-width: 1200px;
   --chat-wrap-width: #{$chat-wrap-width};
   --search-background: #{$search-background};
 }
-
 
 /*
   Animations

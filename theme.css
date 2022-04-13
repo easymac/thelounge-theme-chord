@@ -2,13 +2,13 @@
 /*
   
   Chord
-  v1.0.1
+  v1.1.0
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
   A darkly elegant theme for The Lounge.
 
-  For The Lounge v4.2.0.
+  For The Lounge v4.3.0.
 
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
@@ -16,7 +16,7 @@
   CSS variables so they can be overridden
 */
 :root {
-  --primary-font: Public Sans, sans-serif;
+  --primary-font: Comic Sans, cursive;
   --logo-font: DM Serif Display, serif;
   --chat-background: #2b2e31;
   --sidebar-background: #222428;
