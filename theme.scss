@@ -20,7 +20,7 @@ $svg-x: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' vie
 
 $old-bg: #202226;
 
-$public-sans: 'Comic Sans', cursive;
+$public-sans: 'Public Sans', sans-serif;
 $dm-serif: 'DM Serif Display', serif;
 $dark-background: #2b2e31;
 $darker-background: #222428;
@@ -50,6 +50,7 @@ $chat-wrap-width: 1200px;
   --highlight-bg-color: #{$highlight-color};
   --chat-wrap-width: #{$chat-wrap-width};
   --search-background: #{$search-background};
+  --body-bg-color: #{$dark-background}
 }
 
 /*
@@ -83,6 +84,10 @@ $rainbow-logo-animation: 0.8s rainbow linear;
   font-family: var(--primary-font);
   background: var(--chat-background);
 }
+body {
+  background-color: $dark-background;
+}
+
 
 
 /*
@@ -143,6 +148,10 @@ a {
   font-family: var(--primary-font);
   padding: 0;
 
+  & > p {
+    padding: 15px;
+  }
+
   .mentions-popup-title {
     font-weight: 700;
     padding: 60px 15px 20px 15px;
@@ -189,6 +198,7 @@ a {
   background: rgba(var(--off-black), 0.75);
   border: 1px solid black;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 
   .context-menu-item, .textcomplete-item {
     color: var(--off-white);
@@ -290,7 +300,7 @@ a {
       }
 
       &:focus {
-        box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5)
+        box-shadow: 0 0 0 3px rgba($link-blue, 0.5)
       }
     }
 
@@ -517,6 +527,45 @@ a {
     color: $pale-blue;
   }
 }
+#chat form.message-search button { // sigh
+  color: $pale-blue
+}
+
+
+/*
+  Search bar
+*/
+form.message-search {
+
+  &.opened .input-wrapper {
+    height: 65px;
+  }
+  .input-wrapper {
+    background: transparent;
+
+    input {
+      background: var(--sidebar-background);
+      color: var(--off-white);
+      border: none;
+      border-radius: 10px;
+      padding: 0 15px;
+      height: 50px;
+  
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($link-blue, 0.5)
+      }
+
+      &::placeholder {
+        color: var(--off-white);
+      }
+
+      &:hover {
+        border: none;
+      }
+
+    }
+  }
+}
 
 
 /*
@@ -561,8 +610,13 @@ a {
       color: #fff;
     }
 
+    .content i, .content span {
+      position: relative;
+    }
+
     .hostmask, .hostmask + i {
-      filter: saturate(30%) brightness(102%);
+      // filter: saturate(30%) brightness(102%);
+      position: relative;
     }
 
     .from {
@@ -613,6 +667,51 @@ a {
     &[data-type=nick] .from:before,
     &[data-type=topic] .from:before {
       color: rgba($pale-blue, 0.8);
+    }
+
+    // Adding color to the status change messages
+    // which do not have a targetable parent using a
+    // pseudo-element hack?
+
+    @mixin pseudoColorTrick($content) {
+      content: $content;
+      display: block;
+      white-space: pre;
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+      line-height: 1;
+    }
+
+    &[data-type=quit] .content {
+      color: transparent;
+
+      .hostmask::after {
+        @include pseudoColorTrick(' has quit ');
+      }
+    }
+    &[data-type=part] .content {
+      color: transparent;
+
+      .hostmask::after {
+        @include pseudoColorTrick(' has left the channel ');
+      }
+    }
+
+    &[data-type=join] .content {
+      color: transparent;
+
+      i:last-child::after {
+          @include pseudoColorTrick(' has joined the channel ');
+      }
+    }
+
+    &[data-type=nick] .content {
+      color: transparent;
+
+      span:first-child::after { 
+        @include pseudoColorTrick(' is now known as ');
+      }
     }
   }
 
@@ -778,7 +877,7 @@ a {
     height: 50px;
 
     &:focus {
-      box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5)
+      box-shadow: 0 0 0 3px rgba($link-blue, 0.5)
     }
   }
 
@@ -915,9 +1014,21 @@ $username-colors:
     & + .hostmask + i {
       color: $selected-color;
     }
+
+
+    // Part of the pseudo element color trick.
+    // Lots of sibling selectors to get all the
+    // new stuff in status messages.
+    & + i,
+    & + i + i,
+    & + i + i + i,
+    & + i + i + i + i
+    & + i + i + i + i + i {
+      filter: saturate(30%) brightness(102%);
+      color: $selected-color;
+    }
   }
 }
-
 
 
 /*
@@ -954,7 +1065,7 @@ $max-brightness-diff: 25;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-height: 575.98px) and (orientation: landscape) {
 
   /*
     This is absolutely crucial. Applying many

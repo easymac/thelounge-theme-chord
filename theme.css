@@ -16,7 +16,7 @@
   CSS variables so they can be overridden
 */
 :root {
-  --primary-font: Comic Sans, cursive;
+  --primary-font: Public Sans, sans-serif;
   --logo-font: DM Serif Display, serif;
   --chat-background: #2b2e31;
   --sidebar-background: #222428;
@@ -25,7 +25,9 @@
   --link-color: #7aafff;
   --highlight-bg-color: #2f3b4c;
   --chat-wrap-width: 1200px;
-  --search-background: #27292d; }
+  --search-background: #27292d;
+  --body-bg-color: #2b2e31
+; }
 
 /*
   Animations
@@ -52,6 +54,9 @@
 .window {
   font-family: var(--primary-font);
   background: var(--chat-background); }
+
+body {
+  background-color: #2b2e31; }
 
 /*
   Button styles
@@ -96,6 +101,8 @@ a {
   color: var(--off-white);
   font-family: var(--primary-font);
   padding: 0; }
+  .mentions-popup > p {
+    padding: 15px; }
   .mentions-popup .mentions-popup-title {
     font-weight: 700;
     padding: 60px 15px 20px 15px;
@@ -126,7 +133,8 @@ a {
 #context-menu, .textcomplete-menu {
   background: rgba(var(--off-black), 0.75);
   border: 1px solid black;
-  backdrop-filter: blur(20px); }
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); }
   #context-menu .context-menu-item, #context-menu .textcomplete-item, .textcomplete-menu .context-menu-item, .textcomplete-menu .textcomplete-item {
     color: var(--off-white); }
     #context-menu .context-menu-item a, #context-menu .textcomplete-item a, .textcomplete-menu .context-menu-item a, .textcomplete-menu .textcomplete-item a {
@@ -193,7 +201,7 @@ a {
       #sidebar .jump-to-input .input::placeholder {
         color: #abb8c9; }
       #sidebar .jump-to-input .input:focus {
-        box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5); }
+        box-shadow: 0 0 0 3px rgba(122, 175, 255, 0.5); }
     #sidebar .jump-to-input::before {
       color: #55606c; }
   #sidebar .lobby-wrap {
@@ -346,6 +354,31 @@ a {
     top: 8px;
     color: #abb8c9; }
 
+#chat form.message-search button {
+  color: #abb8c9; }
+
+/*
+  Search bar
+*/
+form.message-search.opened .input-wrapper {
+  height: 65px; }
+
+form.message-search .input-wrapper {
+  background: transparent; }
+  form.message-search .input-wrapper input {
+    background: var(--sidebar-background);
+    color: var(--off-white);
+    border: none;
+    border-radius: 10px;
+    padding: 0 15px;
+    height: 50px; }
+    form.message-search .input-wrapper input:focus {
+      box-shadow: 0 0 0 3px rgba(122, 175, 255, 0.5); }
+    form.message-search .input-wrapper input::placeholder {
+      color: var(--off-white); }
+    form.message-search .input-wrapper input:hover {
+      border: none; }
+
 /*
   Styling for message buffer
 */
@@ -375,8 +408,10 @@ a {
     max-width: var(--chat-wrap-width); }
     #chat .msg.self .content {
       color: #fff; }
+    #chat .msg .content i, #chat .msg .content span {
+      position: relative; }
     #chat .msg .hostmask, #chat .msg .hostmask + i {
-      filter: saturate(30%) brightness(102%); }
+      position: relative; }
     #chat .msg .from {
       font-weight: 500; }
     #chat .msg[data-type=away] .content,
@@ -410,6 +445,46 @@ a {
     #chat .msg[data-type=nick] .from:before,
     #chat .msg[data-type=topic] .from:before {
       color: rgba(171, 184, 201, 0.8); }
+    #chat .msg[data-type=quit] .content {
+      color: transparent; }
+      #chat .msg[data-type=quit] .content .hostmask::after {
+        content: " has quit ";
+        display: block;
+        white-space: pre;
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        line-height: 1; }
+    #chat .msg[data-type=part] .content {
+      color: transparent; }
+      #chat .msg[data-type=part] .content .hostmask::after {
+        content: " has left the channel ";
+        display: block;
+        white-space: pre;
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        line-height: 1; }
+    #chat .msg[data-type=join] .content {
+      color: transparent; }
+      #chat .msg[data-type=join] .content i:last-child::after {
+        content: " has joined the channel ";
+        display: block;
+        white-space: pre;
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        line-height: 1; }
+    #chat .msg[data-type=nick] .content {
+      color: transparent; }
+      #chat .msg[data-type=nick] .content span:first-child::after {
+        content: " is now known as ";
+        display: block;
+        white-space: pre;
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        line-height: 1; }
   #chat .content {
     border-left: none; }
   #chat .time {
@@ -526,7 +601,7 @@ a {
     padding: 0 15px;
     height: 50px; }
     #connect .container .input:focus, #settings .container .input:focus, #help .container .input:focus {
-      box-shadow: 0 0 0 3px rgba(var(--link-color), 0.5); }
+      box-shadow: 0 0 0 3px rgba(122, 175, 255, 0.5); }
   #connect .container textarea.input, #settings .container textarea.input, #help .container textarea.input {
     height: 100px; }
 
@@ -600,12 +675,26 @@ a {
     color: #FF93A4; }
   #chat.colored-nicks .user.color-1 + .hostmask + i {
     color: #FF93A4; }
+  #chat.colored-nicks .user.color-1 + i,
+  #chat.colored-nicks .user.color-1 + i + i,
+  #chat.colored-nicks .user.color-1 + i + i + i,
+  #chat.colored-nicks .user.color-1 + i + i + i + i
+#chat.colored-nicks .user.color-1 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FF93A4; }
 
 #chat.colored-nicks .user.color-2 {
   color: #FFB03B; }
   #chat.colored-nicks .user.color-2 + .hostmask {
     color: #FFB03B; }
   #chat.colored-nicks .user.color-2 + .hostmask + i {
+    color: #FFB03B; }
+  #chat.colored-nicks .user.color-2 + i,
+  #chat.colored-nicks .user.color-2 + i + i,
+  #chat.colored-nicks .user.color-2 + i + i + i,
+  #chat.colored-nicks .user.color-2 + i + i + i + i
+#chat.colored-nicks .user.color-2 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FFB03B; }
 
 #chat.colored-nicks .user.color-3 {
@@ -614,12 +703,26 @@ a {
     color: #D5F572; }
   #chat.colored-nicks .user.color-3 + .hostmask + i {
     color: #D5F572; }
+  #chat.colored-nicks .user.color-3 + i,
+  #chat.colored-nicks .user.color-3 + i + i,
+  #chat.colored-nicks .user.color-3 + i + i + i,
+  #chat.colored-nicks .user.color-3 + i + i + i + i
+#chat.colored-nicks .user.color-3 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #D5F572; }
 
 #chat.colored-nicks .user.color-4 {
   color: #9fffec; }
   #chat.colored-nicks .user.color-4 + .hostmask {
     color: #9fffec; }
   #chat.colored-nicks .user.color-4 + .hostmask + i {
+    color: #9fffec; }
+  #chat.colored-nicks .user.color-4 + i,
+  #chat.colored-nicks .user.color-4 + i + i,
+  #chat.colored-nicks .user.color-4 + i + i + i,
+  #chat.colored-nicks .user.color-4 + i + i + i + i
+#chat.colored-nicks .user.color-4 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #9fffec; }
 
 #chat.colored-nicks .user.color-5 {
@@ -628,12 +731,26 @@ a {
     color: #91A6FF; }
   #chat.colored-nicks .user.color-5 + .hostmask + i {
     color: #91A6FF; }
+  #chat.colored-nicks .user.color-5 + i,
+  #chat.colored-nicks .user.color-5 + i + i,
+  #chat.colored-nicks .user.color-5 + i + i + i,
+  #chat.colored-nicks .user.color-5 + i + i + i + i
+#chat.colored-nicks .user.color-5 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #91A6FF; }
 
 #chat.colored-nicks .user.color-6 {
   color: #b889ff; }
   #chat.colored-nicks .user.color-6 + .hostmask {
     color: #b889ff; }
   #chat.colored-nicks .user.color-6 + .hostmask + i {
+    color: #b889ff; }
+  #chat.colored-nicks .user.color-6 + i,
+  #chat.colored-nicks .user.color-6 + i + i,
+  #chat.colored-nicks .user.color-6 + i + i + i,
+  #chat.colored-nicks .user.color-6 + i + i + i + i
+#chat.colored-nicks .user.color-6 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #b889ff; }
 
 #chat.colored-nicks .user.color-7 {
@@ -642,12 +759,26 @@ a {
     color: #ffb4e8; }
   #chat.colored-nicks .user.color-7 + .hostmask + i {
     color: #ffb4e8; }
+  #chat.colored-nicks .user.color-7 + i,
+  #chat.colored-nicks .user.color-7 + i + i,
+  #chat.colored-nicks .user.color-7 + i + i + i,
+  #chat.colored-nicks .user.color-7 + i + i + i + i
+#chat.colored-nicks .user.color-7 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #ffb4e8; }
 
 #chat.colored-nicks .user.color-8 {
   color: #FFA300; }
   #chat.colored-nicks .user.color-8 + .hostmask {
     color: #FFA300; }
   #chat.colored-nicks .user.color-8 + .hostmask + i {
+    color: #FFA300; }
+  #chat.colored-nicks .user.color-8 + i,
+  #chat.colored-nicks .user.color-8 + i + i,
+  #chat.colored-nicks .user.color-8 + i + i + i,
+  #chat.colored-nicks .user.color-8 + i + i + i + i
+#chat.colored-nicks .user.color-8 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FFA300; }
 
 #chat.colored-nicks .user.color-9 {
@@ -656,12 +787,26 @@ a {
     color: #FFEC27; }
   #chat.colored-nicks .user.color-9 + .hostmask + i {
     color: #FFEC27; }
+  #chat.colored-nicks .user.color-9 + i,
+  #chat.colored-nicks .user.color-9 + i + i,
+  #chat.colored-nicks .user.color-9 + i + i + i,
+  #chat.colored-nicks .user.color-9 + i + i + i + i
+#chat.colored-nicks .user.color-9 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FFEC27; }
 
 #chat.colored-nicks .user.color-10 {
   color: #00E436; }
   #chat.colored-nicks .user.color-10 + .hostmask {
     color: #00E436; }
   #chat.colored-nicks .user.color-10 + .hostmask + i {
+    color: #00E436; }
+  #chat.colored-nicks .user.color-10 + i,
+  #chat.colored-nicks .user.color-10 + i + i,
+  #chat.colored-nicks .user.color-10 + i + i + i,
+  #chat.colored-nicks .user.color-10 + i + i + i + i
+#chat.colored-nicks .user.color-10 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #00E436; }
 
 #chat.colored-nicks .user.color-11 {
@@ -670,12 +815,26 @@ a {
     color: #29ADFF; }
   #chat.colored-nicks .user.color-11 + .hostmask + i {
     color: #29ADFF; }
+  #chat.colored-nicks .user.color-11 + i,
+  #chat.colored-nicks .user.color-11 + i + i,
+  #chat.colored-nicks .user.color-11 + i + i + i,
+  #chat.colored-nicks .user.color-11 + i + i + i + i
+#chat.colored-nicks .user.color-11 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #29ADFF; }
 
 #chat.colored-nicks .user.color-12 {
   color: #FF77A8; }
   #chat.colored-nicks .user.color-12 + .hostmask {
     color: #FF77A8; }
   #chat.colored-nicks .user.color-12 + .hostmask + i {
+    color: #FF77A8; }
+  #chat.colored-nicks .user.color-12 + i,
+  #chat.colored-nicks .user.color-12 + i + i,
+  #chat.colored-nicks .user.color-12 + i + i + i,
+  #chat.colored-nicks .user.color-12 + i + i + i + i
+#chat.colored-nicks .user.color-12 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FF77A8; }
 
 #chat.colored-nicks .user.color-13 {
@@ -684,12 +843,26 @@ a {
     color: #FFCCAA; }
   #chat.colored-nicks .user.color-13 + .hostmask + i {
     color: #FFCCAA; }
+  #chat.colored-nicks .user.color-13 + i,
+  #chat.colored-nicks .user.color-13 + i + i,
+  #chat.colored-nicks .user.color-13 + i + i + i,
+  #chat.colored-nicks .user.color-13 + i + i + i + i
+#chat.colored-nicks .user.color-13 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FFCCAA; }
 
 #chat.colored-nicks .user.color-14 {
   color: #EF4657; }
   #chat.colored-nicks .user.color-14 + .hostmask {
     color: #EF4657; }
   #chat.colored-nicks .user.color-14 + .hostmask + i {
+    color: #EF4657; }
+  #chat.colored-nicks .user.color-14 + i,
+  #chat.colored-nicks .user.color-14 + i + i,
+  #chat.colored-nicks .user.color-14 + i + i + i,
+  #chat.colored-nicks .user.color-14 + i + i + i + i
+#chat.colored-nicks .user.color-14 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #EF4657; }
 
 #chat.colored-nicks .user.color-15 {
@@ -698,12 +871,26 @@ a {
     color: #FF93A4; }
   #chat.colored-nicks .user.color-15 + .hostmask + i {
     color: #FF93A4; }
+  #chat.colored-nicks .user.color-15 + i,
+  #chat.colored-nicks .user.color-15 + i + i,
+  #chat.colored-nicks .user.color-15 + i + i + i,
+  #chat.colored-nicks .user.color-15 + i + i + i + i
+#chat.colored-nicks .user.color-15 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FF93A4; }
 
 #chat.colored-nicks .user.color-16 {
   color: #FFB03B; }
   #chat.colored-nicks .user.color-16 + .hostmask {
     color: #FFB03B; }
   #chat.colored-nicks .user.color-16 + .hostmask + i {
+    color: #FFB03B; }
+  #chat.colored-nicks .user.color-16 + i,
+  #chat.colored-nicks .user.color-16 + i + i,
+  #chat.colored-nicks .user.color-16 + i + i + i,
+  #chat.colored-nicks .user.color-16 + i + i + i + i
+#chat.colored-nicks .user.color-16 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FFB03B; }
 
 #chat.colored-nicks .user.color-17 {
@@ -712,12 +899,26 @@ a {
     color: #D5F572; }
   #chat.colored-nicks .user.color-17 + .hostmask + i {
     color: #D5F572; }
+  #chat.colored-nicks .user.color-17 + i,
+  #chat.colored-nicks .user.color-17 + i + i,
+  #chat.colored-nicks .user.color-17 + i + i + i,
+  #chat.colored-nicks .user.color-17 + i + i + i + i
+#chat.colored-nicks .user.color-17 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #D5F572; }
 
 #chat.colored-nicks .user.color-18 {
   color: #9fffec; }
   #chat.colored-nicks .user.color-18 + .hostmask {
     color: #9fffec; }
   #chat.colored-nicks .user.color-18 + .hostmask + i {
+    color: #9fffec; }
+  #chat.colored-nicks .user.color-18 + i,
+  #chat.colored-nicks .user.color-18 + i + i,
+  #chat.colored-nicks .user.color-18 + i + i + i,
+  #chat.colored-nicks .user.color-18 + i + i + i + i
+#chat.colored-nicks .user.color-18 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #9fffec; }
 
 #chat.colored-nicks .user.color-19 {
@@ -726,12 +927,26 @@ a {
     color: #91A6FF; }
   #chat.colored-nicks .user.color-19 + .hostmask + i {
     color: #91A6FF; }
+  #chat.colored-nicks .user.color-19 + i,
+  #chat.colored-nicks .user.color-19 + i + i,
+  #chat.colored-nicks .user.color-19 + i + i + i,
+  #chat.colored-nicks .user.color-19 + i + i + i + i
+#chat.colored-nicks .user.color-19 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #91A6FF; }
 
 #chat.colored-nicks .user.color-20 {
   color: #b889ff; }
   #chat.colored-nicks .user.color-20 + .hostmask {
     color: #b889ff; }
   #chat.colored-nicks .user.color-20 + .hostmask + i {
+    color: #b889ff; }
+  #chat.colored-nicks .user.color-20 + i,
+  #chat.colored-nicks .user.color-20 + i + i,
+  #chat.colored-nicks .user.color-20 + i + i + i,
+  #chat.colored-nicks .user.color-20 + i + i + i + i
+#chat.colored-nicks .user.color-20 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #b889ff; }
 
 #chat.colored-nicks .user.color-21 {
@@ -740,12 +955,26 @@ a {
     color: #ffb4e8; }
   #chat.colored-nicks .user.color-21 + .hostmask + i {
     color: #ffb4e8; }
+  #chat.colored-nicks .user.color-21 + i,
+  #chat.colored-nicks .user.color-21 + i + i,
+  #chat.colored-nicks .user.color-21 + i + i + i,
+  #chat.colored-nicks .user.color-21 + i + i + i + i
+#chat.colored-nicks .user.color-21 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #ffb4e8; }
 
 #chat.colored-nicks .user.color-22 {
   color: #FFA300; }
   #chat.colored-nicks .user.color-22 + .hostmask {
     color: #FFA300; }
   #chat.colored-nicks .user.color-22 + .hostmask + i {
+    color: #FFA300; }
+  #chat.colored-nicks .user.color-22 + i,
+  #chat.colored-nicks .user.color-22 + i + i,
+  #chat.colored-nicks .user.color-22 + i + i + i,
+  #chat.colored-nicks .user.color-22 + i + i + i + i
+#chat.colored-nicks .user.color-22 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FFA300; }
 
 #chat.colored-nicks .user.color-23 {
@@ -754,12 +983,26 @@ a {
     color: #FFEC27; }
   #chat.colored-nicks .user.color-23 + .hostmask + i {
     color: #FFEC27; }
+  #chat.colored-nicks .user.color-23 + i,
+  #chat.colored-nicks .user.color-23 + i + i,
+  #chat.colored-nicks .user.color-23 + i + i + i,
+  #chat.colored-nicks .user.color-23 + i + i + i + i
+#chat.colored-nicks .user.color-23 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FFEC27; }
 
 #chat.colored-nicks .user.color-24 {
   color: #00E436; }
   #chat.colored-nicks .user.color-24 + .hostmask {
     color: #00E436; }
   #chat.colored-nicks .user.color-24 + .hostmask + i {
+    color: #00E436; }
+  #chat.colored-nicks .user.color-24 + i,
+  #chat.colored-nicks .user.color-24 + i + i,
+  #chat.colored-nicks .user.color-24 + i + i + i,
+  #chat.colored-nicks .user.color-24 + i + i + i + i
+#chat.colored-nicks .user.color-24 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #00E436; }
 
 #chat.colored-nicks .user.color-25 {
@@ -768,12 +1011,26 @@ a {
     color: #29ADFF; }
   #chat.colored-nicks .user.color-25 + .hostmask + i {
     color: #29ADFF; }
+  #chat.colored-nicks .user.color-25 + i,
+  #chat.colored-nicks .user.color-25 + i + i,
+  #chat.colored-nicks .user.color-25 + i + i + i,
+  #chat.colored-nicks .user.color-25 + i + i + i + i
+#chat.colored-nicks .user.color-25 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #29ADFF; }
 
 #chat.colored-nicks .user.color-26 {
   color: #FF77A8; }
   #chat.colored-nicks .user.color-26 + .hostmask {
     color: #FF77A8; }
   #chat.colored-nicks .user.color-26 + .hostmask + i {
+    color: #FF77A8; }
+  #chat.colored-nicks .user.color-26 + i,
+  #chat.colored-nicks .user.color-26 + i + i,
+  #chat.colored-nicks .user.color-26 + i + i + i,
+  #chat.colored-nicks .user.color-26 + i + i + i + i
+#chat.colored-nicks .user.color-26 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FF77A8; }
 
 #chat.colored-nicks .user.color-27 {
@@ -782,12 +1039,26 @@ a {
     color: #FFCCAA; }
   #chat.colored-nicks .user.color-27 + .hostmask + i {
     color: #FFCCAA; }
+  #chat.colored-nicks .user.color-27 + i,
+  #chat.colored-nicks .user.color-27 + i + i,
+  #chat.colored-nicks .user.color-27 + i + i + i,
+  #chat.colored-nicks .user.color-27 + i + i + i + i
+#chat.colored-nicks .user.color-27 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FFCCAA; }
 
 #chat.colored-nicks .user.color-28 {
   color: #EF4657; }
   #chat.colored-nicks .user.color-28 + .hostmask {
     color: #EF4657; }
   #chat.colored-nicks .user.color-28 + .hostmask + i {
+    color: #EF4657; }
+  #chat.colored-nicks .user.color-28 + i,
+  #chat.colored-nicks .user.color-28 + i + i,
+  #chat.colored-nicks .user.color-28 + i + i + i,
+  #chat.colored-nicks .user.color-28 + i + i + i + i
+#chat.colored-nicks .user.color-28 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #EF4657; }
 
 #chat.colored-nicks .user.color-29 {
@@ -796,12 +1067,26 @@ a {
     color: #FF93A4; }
   #chat.colored-nicks .user.color-29 + .hostmask + i {
     color: #FF93A4; }
+  #chat.colored-nicks .user.color-29 + i,
+  #chat.colored-nicks .user.color-29 + i + i,
+  #chat.colored-nicks .user.color-29 + i + i + i,
+  #chat.colored-nicks .user.color-29 + i + i + i + i
+#chat.colored-nicks .user.color-29 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #FF93A4; }
 
 #chat.colored-nicks .user.color-30 {
   color: #FFB03B; }
   #chat.colored-nicks .user.color-30 + .hostmask {
     color: #FFB03B; }
   #chat.colored-nicks .user.color-30 + .hostmask + i {
+    color: #FFB03B; }
+  #chat.colored-nicks .user.color-30 + i,
+  #chat.colored-nicks .user.color-30 + i + i,
+  #chat.colored-nicks .user.color-30 + i + i + i,
+  #chat.colored-nicks .user.color-30 + i + i + i + i
+#chat.colored-nicks .user.color-30 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #FFB03B; }
 
 #chat.colored-nicks .user.color-31 {
@@ -810,12 +1095,26 @@ a {
     color: #D5F572; }
   #chat.colored-nicks .user.color-31 + .hostmask + i {
     color: #D5F572; }
+  #chat.colored-nicks .user.color-31 + i,
+  #chat.colored-nicks .user.color-31 + i + i,
+  #chat.colored-nicks .user.color-31 + i + i + i,
+  #chat.colored-nicks .user.color-31 + i + i + i + i
+#chat.colored-nicks .user.color-31 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
+    color: #D5F572; }
 
 #chat.colored-nicks .user.color-32 {
   color: #9fffec; }
   #chat.colored-nicks .user.color-32 + .hostmask {
     color: #9fffec; }
   #chat.colored-nicks .user.color-32 + .hostmask + i {
+    color: #9fffec; }
+  #chat.colored-nicks .user.color-32 + i,
+  #chat.colored-nicks .user.color-32 + i + i,
+  #chat.colored-nicks .user.color-32 + i + i + i,
+  #chat.colored-nicks .user.color-32 + i + i + i + i
+#chat.colored-nicks .user.color-32 + i + i + i + i + i {
+    filter: saturate(30%) brightness(102%);
     color: #9fffec; }
 
 /*
@@ -934,7 +1233,7 @@ a {
   #chat .msg:nth-last-child(n+50) {
     filter: brightness(125%); } }
 
-@media (max-width: 768px) {
+@media (max-height: 575.98px) and (orientation: landscape) {
   /*
     This is absolutely crucial. Applying many
     discrete `filter` rules destroys iOS Safari
