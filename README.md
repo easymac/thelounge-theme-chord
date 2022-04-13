@@ -48,6 +48,15 @@ git clone git@github.com:easymac/thelounge-theme-chord.git
 cd /thelounge-theme-chord
 npm run scss
 ```
+
+Since The Lounge doesn't at the time of writing support installing themes from
+local npm packages, for development purposes the theme needs to be installed
+with `thelounge install thelounge-theme-chord` and modifications to `theme.css`
+need to be copied to `/etc/thelounge/packages/node_modules/thelounge-theme-chord/theme.css`.
+
+Right now, I'm just manually copying it over after every change, which sucks.
+I should set up a watcher to do it for me but I haven't.
+
 ### Todo:
 Feel free to take a crack at any of these that interest you:
 - **Optimize for your devices**: I only tested Chord on my own devices. If you identify any fixes or areas that can be improved for your device, please open an issue with a screenshot! (Or make a PR if you're feeling generous.) This particularly includes adjustments that can be made to media queries to better scale the UI to your screens.
