@@ -50,7 +50,7 @@ $chat-wrap-width: 1200px;
   --highlight-bg-color: #{$highlight-color};
   --chat-wrap-width: #{$chat-wrap-width};
   --search-background: #{$search-background};
-  --body-bg-color: #{$dark-background}
+  --body-bg-color: #{$dark-background};
 }
 
 /*
@@ -679,46 +679,77 @@ form.message-search {
 
     // Adding color to the status change messages
     // which do not have a targetable parent using a
-    // pseudo-element hack?
+    // pseudo-element hack.
+
+    // Explanation: uses ::after to add a string to
+    // a targetable element with display: inline
+    // so it affects flow as normal. Sets entire
+    // .content to letter-spacing: -1ch and
+    // font-family: monospace; to collapse letter
+    // width to exactly zero, then resets the font
+    // and letter-spacing on children so they are
+    // displayed as usual.
 
     @mixin pseudoColorTrick($content) {
       content: $content;
-      display: block;
-      white-space: pre;
-      position: absolute;
-      bottom: 0;
-      left: 100%;
+      display: inline-block;
       line-height: 1;
+      pointer-events: none;
+      white-space: pre-wrap;
+      font-style: normal !important;
+      filter: saturate(333%) brightness(98.04%);
+    }
+
+    @mixin pseudoColorTrickParent() {
+      color: transparent;
+      letter-spacing: -1ch;
+      font-family: monospace;
+
+      & > * {
+        letter-spacing: normal;
+        white-space: normal;
+        font-family: var(--primary-font)
+      }
+      & > span::after {
+        filter: saturate(30%) brightness(102%) !important;
+      }
+      & 
+      span.user:last-child {
+        filter: none !important;
+      }
     }
 
     &[data-type=quit] .content {
-      color: transparent;
-
+      @include pseudoColorTrickParent();
       .hostmask::after {
         @include pseudoColorTrick(' has quit ');
       }
     }
     &[data-type=part] .content {
-      color: transparent;
-
+      @include pseudoColorTrickParent();
       .hostmask::after {
         @include pseudoColorTrick(' has left the channel ');
       }
     }
 
     &[data-type=join] .content {
-      color: transparent;
-
+      @include pseudoColorTrickParent();
       i:last-child::after {
           @include pseudoColorTrick(' has joined the channel ');
       }
     }
 
     &[data-type=nick] .content {
-      color: transparent;
-
+      @include pseudoColorTrickParent();
       span:first-child::after { 
         @include pseudoColorTrick(' is now known as ');
+      }
+    }
+
+    &[data-type=chghost] .content {
+      @include pseudoColorTrickParent();
+      span:first-child::after {
+        @include pseudoColorTrick(' has changed ');
       }
     }
   }
@@ -789,11 +820,17 @@ form.message-search {
   }
 }
 
+
 /*
   Userlist
 */
 #chat .userlist { 
   border: none;
+
+  // Prevent gradient filter from being applied to userlist
+  .names span {
+    filter: none !important;
+  }
 
   .user-mode::before {
     background: transparent;
@@ -1027,6 +1064,7 @@ $username-colors:
     // Part of the pseudo element color trick.
     // Lots of sibling selectors to get all the
     // new stuff in status messages.
+    & + span:not(.user),
     & + i,
     & + i + i,
     & + i + i + i,
@@ -1073,7 +1111,9 @@ $max-brightness-diff: 25;
   }
 }
 
-@media (max-height: 575.98px) and (orientation: landscape) {
+// @supports query specific to iOS devices. Might stop working
+// with no notice when iOS Safari is updated.
+@supports (-webkit-touch-callout: none) {
 
   /*
     This is absolutely crucial. Applying many
