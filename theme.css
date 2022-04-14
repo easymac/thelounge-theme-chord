@@ -469,6 +469,7 @@ form.message-search .input-wrapper {
         pointer-events: none;
         white-space: pre-wrap;
         font-style: normal !important;
+        font-weight: 500 !important;
         filter: saturate(333%) brightness(98.04%); }
     #chat .msg[data-type=part] .content {
       color: transparent;
@@ -489,6 +490,7 @@ form.message-search .input-wrapper {
         pointer-events: none;
         white-space: pre-wrap;
         font-style: normal !important;
+        font-weight: 500 !important;
         filter: saturate(333%) brightness(98.04%); }
     #chat .msg[data-type=join] .content {
       color: transparent;
@@ -509,6 +511,7 @@ form.message-search .input-wrapper {
         pointer-events: none;
         white-space: pre-wrap;
         font-style: normal !important;
+        font-weight: 500 !important;
         filter: saturate(333%) brightness(98.04%); }
     #chat .msg[data-type=nick] .content {
       color: transparent;
@@ -529,6 +532,7 @@ form.message-search .input-wrapper {
         pointer-events: none;
         white-space: pre-wrap;
         font-style: normal !important;
+        font-weight: 500 !important;
         filter: saturate(333%) brightness(98.04%); }
     #chat .msg[data-type=chghost] .content {
       color: transparent;
@@ -549,6 +553,7 @@ form.message-search .input-wrapper {
         pointer-events: none;
         white-space: pre-wrap;
         font-style: normal !important;
+        font-weight: 500 !important;
         filter: saturate(333%) brightness(98.04%); }
   #chat .content {
     border-left: none; }
