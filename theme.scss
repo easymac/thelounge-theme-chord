@@ -630,6 +630,10 @@ form.message-search {
     .from {
       font-weight: 500;
     }
+
+    &[data-type=monospace_block] .text {
+      background: var(--sidebar-background)
+    }
   
     // yawn
     &[data-type=away] .content,

@@ -419,6 +419,8 @@ form.message-search .input-wrapper {
       position: relative; }
     #chat .msg .from {
       font-weight: 500; }
+    #chat .msg[data-type=monospace_block] .text {
+      background: var(--sidebar-background); }
     #chat .msg[data-type=away] .content,
     #chat .msg[data-type=back] .content,
     #chat .msg[data-type=condensed] .content,
