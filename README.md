@@ -21,7 +21,7 @@ Below are snippets designed to be pasted in the `Custom Stylesheet` setting to o
 
 #### Style for bots
 ```CSS
-#chat .msg[data-from=BOT_NICKNAME] {
+#chat .msg[data-from=BOT_NICKNAME] .content {
   font-family: monospace;
   color: #888;
 }
@@ -38,6 +38,13 @@ Below are snippets designed to be pasted in the `Custom Stylesheet` setting to o
 	--chat-wrap-width: 1200px /* default */
 }
 ```
+#### Disable update indicator
+```CSS
+:root {
+  --update-available: 0;
+}
+```
+
 ## Contributing
 Bug reports, feature requests, suggestions, and feedback should be posted in the [issue tracker](https://github.com/easymac/thelounge-theme-chord/issues).
 
