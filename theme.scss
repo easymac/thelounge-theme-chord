@@ -1092,6 +1092,7 @@ $username-colors:
         backdrop-filter: var(--status-msg-filter);
         -webkit-backdrop-filter: var(--status-msg-filter);
         z-index: 1;
+        pointer-events: none;
       }
     }
   }

@@ -2,13 +2,13 @@
 /*
   
   Chord
-  v1.1.4
+  v1.1.5
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
   A darkly elegant theme for The Lounge.
 
-  For The Lounge v4.3.0.
+  For The Lounge v4.3.1.
 
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
@@ -779,7 +779,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-2 {
   color: #FFB03B; }
@@ -811,7 +812,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-3 {
   color: #D5F572; }
@@ -843,7 +845,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-4 {
   color: #9fffec; }
@@ -875,7 +878,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-5 {
   color: #91A6FF; }
@@ -907,7 +911,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-6 {
   color: #b889ff; }
@@ -939,7 +944,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-7 {
   color: #ffb4e8; }
@@ -971,7 +977,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-8 {
   color: #FFA300; }
@@ -1003,7 +1010,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-9 {
   color: #FFEC27; }
@@ -1035,7 +1043,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-10 {
   color: #00E436; }
@@ -1067,7 +1076,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-11 {
   color: #29ADFF; }
@@ -1099,7 +1109,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-12 {
   color: #FF77A8; }
@@ -1131,7 +1142,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-13 {
   color: #FFCCAA; }
@@ -1163,7 +1175,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-14 {
   color: #EF4657; }
@@ -1195,7 +1208,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-15 {
   color: #FF93A4; }
@@ -1227,7 +1241,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-16 {
   color: #FFB03B; }
@@ -1259,7 +1274,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-17 {
   color: #D5F572; }
@@ -1291,7 +1307,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-18 {
   color: #9fffec; }
@@ -1323,7 +1340,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-19 {
   color: #91A6FF; }
@@ -1355,7 +1373,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-20 {
   color: #b889ff; }
@@ -1387,7 +1406,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-21 {
   color: #ffb4e8; }
@@ -1419,7 +1439,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-22 {
   color: #FFA300; }
@@ -1451,7 +1472,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-23 {
   color: #FFEC27; }
@@ -1483,7 +1505,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-24 {
   color: #00E436; }
@@ -1515,7 +1538,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-25 {
   color: #29ADFF; }
@@ -1547,7 +1571,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-26 {
   color: #FF77A8; }
@@ -1579,7 +1604,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-27 {
   color: #FFCCAA; }
@@ -1611,7 +1637,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-28 {
   color: #EF4657; }
@@ -1643,7 +1670,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-29 {
   color: #FF93A4; }
@@ -1675,7 +1703,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-30 {
   color: #FFB03B; }
@@ -1707,7 +1736,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-31 {
   color: #D5F572; }
@@ -1739,7 +1769,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 #chat.colored-nicks .user.color-32 {
   color: #9fffec; }
@@ -1771,7 +1802,8 @@ form.message-search .input-wrapper {
       right: 0;
       backdrop-filter: var(--status-msg-filter);
       -webkit-backdrop-filter: var(--status-msg-filter);
-      z-index: 1; }
+      z-index: 1;
+      pointer-events: none; }
 
 /*
   Very Slight Gradient™
