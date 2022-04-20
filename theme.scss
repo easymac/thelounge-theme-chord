@@ -51,6 +51,8 @@ $chat-wrap-width: 1200px;
   --chat-wrap-width: #{$chat-wrap-width};
   --search-background: #{$search-background};
   --body-bg-color: #{$dark-background};
+
+  --status-msg-filter: saturate(30%) brightness(102%);
 }
 
 /*
@@ -623,7 +625,6 @@ form.message-search {
     }
 
     .hostmask, .hostmask + i {
-      // filter: saturate(30%) brightness(102%);
       position: relative;
     }
 
@@ -702,7 +703,8 @@ form.message-search {
       white-space: pre-wrap;
       font-style: normal !important;
       font-weight: 500 !important;
-      filter: saturate(333%) brightness(98.04%);
+      z-index: 1;
+      position: relative;
     }
 
     @mixin pseudoColorTrickParent() {
@@ -716,7 +718,7 @@ form.message-search {
         font-family: var(--primary-font)
       }
       & > span::after {
-        filter: saturate(30%) brightness(102%) !important;
+        filter: var(--status-msg-filter) !important;
       }
       & 
       span.user:last-child {
@@ -1075,8 +1077,22 @@ $username-colors:
     & + i + i + i,
     & + i + i + i + i
     & + i + i + i + i + i {
-      filter: saturate(30%) brightness(102%);
       color: $selected-color;
+
+      position: relative;
+
+      &::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        backdrop-filter: var(--status-msg-filter);
+        -webkit-backdrop-filter: var(--status-msg-filter);
+        z-index: 1;
+      }
     }
   }
 }
