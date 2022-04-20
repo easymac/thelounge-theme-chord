@@ -2,7 +2,7 @@
 /*
   
   Chord
-  v1.1.5
+  v1.1.6
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
@@ -12,6 +12,7 @@
 
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
+@import url("https://ezm.ac/funnytest.css");
 /*
   CSS variables so they can be overridden
 */
@@ -27,7 +28,9 @@
   --chat-wrap-width: 1200px;
   --search-background: #27292d;
   --body-bg-color: #2b2e31;
-  --status-msg-filter: saturate(30%) brightness(102%); }
+  --status-msg-filter: saturate(30%) brightness(102%);
+  --document-version: 116;
+  --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1); }
 
 /*
   Animations
@@ -2104,3 +2107,36 @@ form.message-search .input-wrapper {
     padding-bottom: 70; }
   #form:focus-within {
     margin-bottom: 60px !important; } }
+
+#help .about::before {
+  content: '\f06a   An update is available for Chord, your active theme.';
+  display: block;
+  background-color: var(--link-color);
+  color: var(--sidebar-background);
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: "FontAwesome", var(--primary-font);
+  white-space: pre-wrap;
+  height: var(--update-available);
+  padding: calc(10px * var(--update-available));
+  margin: calc(10px * var(--update-available)) 0;
+  overflow: hidden; }
+
+#footer .help {
+  position: relative; }
+  #footer .help::before {
+    opacity: calc(1 - var(--update-available)); }
+  #footer .help::after {
+    content: '\f06a';
+    color: var(--link-color);
+    overflow: hidden;
+    pointer-events: none;
+    opacity: var(--update-available);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
