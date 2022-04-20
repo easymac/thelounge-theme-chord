@@ -1,7 +1,7 @@
 /*
   
   Chord
-  v1.1.6
+  v1.1.7
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
@@ -55,8 +55,8 @@ $chat-wrap-width: 1200px;
   --body-bg-color: #{$dark-background};
 
   --status-msg-filter: saturate(30%) brightness(102%);
-  --document-version: 116;
-  --available-version: 116;
+  --document-version: 117;
+  --available-version: 117;
   --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1);
 }
 
