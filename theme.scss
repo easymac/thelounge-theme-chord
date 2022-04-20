@@ -1088,6 +1088,7 @@ $username-colors:
       color: $selected-color;
       font-weight: 200;
       position: relative;
+      filter: var(--status-msg-filter);
 
       &::before {
         content: ' ';
@@ -1097,8 +1098,6 @@ $username-colors:
         left: 0;
         bottom: 0;
         right: 0;
-        backdrop-filter: var(--status-msg-filter);
-        -webkit-backdrop-filter: var(--status-msg-filter);
         z-index: 1;
         pointer-events: none;
       }
