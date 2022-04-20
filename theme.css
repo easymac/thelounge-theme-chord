@@ -762,6 +762,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-1 + i + i + i + i
 #chat.colored-nicks .user.color-1 + i + i + i + i + i {
     color: #FF93A4;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-1 + span:not(.user)::before,
     #chat.colored-nicks .user.color-1 + i::before,
@@ -793,6 +794,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-2 + i + i + i + i
 #chat.colored-nicks .user.color-2 + i + i + i + i + i {
     color: #FFB03B;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-2 + span:not(.user)::before,
     #chat.colored-nicks .user.color-2 + i::before,
@@ -824,6 +826,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-3 + i + i + i + i
 #chat.colored-nicks .user.color-3 + i + i + i + i + i {
     color: #D5F572;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-3 + span:not(.user)::before,
     #chat.colored-nicks .user.color-3 + i::before,
@@ -855,6 +858,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-4 + i + i + i + i
 #chat.colored-nicks .user.color-4 + i + i + i + i + i {
     color: #9fffec;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-4 + span:not(.user)::before,
     #chat.colored-nicks .user.color-4 + i::before,
@@ -886,6 +890,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-5 + i + i + i + i
 #chat.colored-nicks .user.color-5 + i + i + i + i + i {
     color: #91A6FF;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-5 + span:not(.user)::before,
     #chat.colored-nicks .user.color-5 + i::before,
@@ -917,6 +922,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-6 + i + i + i + i
 #chat.colored-nicks .user.color-6 + i + i + i + i + i {
     color: #b889ff;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-6 + span:not(.user)::before,
     #chat.colored-nicks .user.color-6 + i::before,
@@ -948,6 +954,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-7 + i + i + i + i
 #chat.colored-nicks .user.color-7 + i + i + i + i + i {
     color: #ffb4e8;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-7 + span:not(.user)::before,
     #chat.colored-nicks .user.color-7 + i::before,
@@ -979,6 +986,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-8 + i + i + i + i
 #chat.colored-nicks .user.color-8 + i + i + i + i + i {
     color: #FFA300;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-8 + span:not(.user)::before,
     #chat.colored-nicks .user.color-8 + i::before,
@@ -1010,6 +1018,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-9 + i + i + i + i
 #chat.colored-nicks .user.color-9 + i + i + i + i + i {
     color: #FFEC27;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-9 + span:not(.user)::before,
     #chat.colored-nicks .user.color-9 + i::before,
@@ -1041,6 +1050,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-10 + i + i + i + i
 #chat.colored-nicks .user.color-10 + i + i + i + i + i {
     color: #00E436;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-10 + span:not(.user)::before,
     #chat.colored-nicks .user.color-10 + i::before,
@@ -1072,6 +1082,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-11 + i + i + i + i
 #chat.colored-nicks .user.color-11 + i + i + i + i + i {
     color: #29ADFF;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-11 + span:not(.user)::before,
     #chat.colored-nicks .user.color-11 + i::before,
@@ -1103,6 +1114,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-12 + i + i + i + i
 #chat.colored-nicks .user.color-12 + i + i + i + i + i {
     color: #FF77A8;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-12 + span:not(.user)::before,
     #chat.colored-nicks .user.color-12 + i::before,
@@ -1134,6 +1146,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-13 + i + i + i + i
 #chat.colored-nicks .user.color-13 + i + i + i + i + i {
     color: #FFCCAA;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-13 + span:not(.user)::before,
     #chat.colored-nicks .user.color-13 + i::before,
@@ -1165,6 +1178,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-14 + i + i + i + i
 #chat.colored-nicks .user.color-14 + i + i + i + i + i {
     color: #EF4657;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-14 + span:not(.user)::before,
     #chat.colored-nicks .user.color-14 + i::before,
@@ -1196,6 +1210,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-15 + i + i + i + i
 #chat.colored-nicks .user.color-15 + i + i + i + i + i {
     color: #FF93A4;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-15 + span:not(.user)::before,
     #chat.colored-nicks .user.color-15 + i::before,
@@ -1227,6 +1242,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-16 + i + i + i + i
 #chat.colored-nicks .user.color-16 + i + i + i + i + i {
     color: #FFB03B;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-16 + span:not(.user)::before,
     #chat.colored-nicks .user.color-16 + i::before,
@@ -1258,6 +1274,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-17 + i + i + i + i
 #chat.colored-nicks .user.color-17 + i + i + i + i + i {
     color: #D5F572;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-17 + span:not(.user)::before,
     #chat.colored-nicks .user.color-17 + i::before,
@@ -1289,6 +1306,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-18 + i + i + i + i
 #chat.colored-nicks .user.color-18 + i + i + i + i + i {
     color: #9fffec;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-18 + span:not(.user)::before,
     #chat.colored-nicks .user.color-18 + i::before,
@@ -1320,6 +1338,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-19 + i + i + i + i
 #chat.colored-nicks .user.color-19 + i + i + i + i + i {
     color: #91A6FF;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-19 + span:not(.user)::before,
     #chat.colored-nicks .user.color-19 + i::before,
@@ -1351,6 +1370,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-20 + i + i + i + i
 #chat.colored-nicks .user.color-20 + i + i + i + i + i {
     color: #b889ff;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-20 + span:not(.user)::before,
     #chat.colored-nicks .user.color-20 + i::before,
@@ -1382,6 +1402,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-21 + i + i + i + i
 #chat.colored-nicks .user.color-21 + i + i + i + i + i {
     color: #ffb4e8;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-21 + span:not(.user)::before,
     #chat.colored-nicks .user.color-21 + i::before,
@@ -1413,6 +1434,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-22 + i + i + i + i
 #chat.colored-nicks .user.color-22 + i + i + i + i + i {
     color: #FFA300;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-22 + span:not(.user)::before,
     #chat.colored-nicks .user.color-22 + i::before,
@@ -1444,6 +1466,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-23 + i + i + i + i
 #chat.colored-nicks .user.color-23 + i + i + i + i + i {
     color: #FFEC27;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-23 + span:not(.user)::before,
     #chat.colored-nicks .user.color-23 + i::before,
@@ -1475,6 +1498,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-24 + i + i + i + i
 #chat.colored-nicks .user.color-24 + i + i + i + i + i {
     color: #00E436;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-24 + span:not(.user)::before,
     #chat.colored-nicks .user.color-24 + i::before,
@@ -1506,6 +1530,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-25 + i + i + i + i
 #chat.colored-nicks .user.color-25 + i + i + i + i + i {
     color: #29ADFF;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-25 + span:not(.user)::before,
     #chat.colored-nicks .user.color-25 + i::before,
@@ -1537,6 +1562,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-26 + i + i + i + i
 #chat.colored-nicks .user.color-26 + i + i + i + i + i {
     color: #FF77A8;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-26 + span:not(.user)::before,
     #chat.colored-nicks .user.color-26 + i::before,
@@ -1568,6 +1594,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-27 + i + i + i + i
 #chat.colored-nicks .user.color-27 + i + i + i + i + i {
     color: #FFCCAA;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-27 + span:not(.user)::before,
     #chat.colored-nicks .user.color-27 + i::before,
@@ -1599,6 +1626,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-28 + i + i + i + i
 #chat.colored-nicks .user.color-28 + i + i + i + i + i {
     color: #EF4657;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-28 + span:not(.user)::before,
     #chat.colored-nicks .user.color-28 + i::before,
@@ -1630,6 +1658,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-29 + i + i + i + i
 #chat.colored-nicks .user.color-29 + i + i + i + i + i {
     color: #FF93A4;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-29 + span:not(.user)::before,
     #chat.colored-nicks .user.color-29 + i::before,
@@ -1661,6 +1690,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-30 + i + i + i + i
 #chat.colored-nicks .user.color-30 + i + i + i + i + i {
     color: #FFB03B;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-30 + span:not(.user)::before,
     #chat.colored-nicks .user.color-30 + i::before,
@@ -1692,6 +1722,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-31 + i + i + i + i
 #chat.colored-nicks .user.color-31 + i + i + i + i + i {
     color: #D5F572;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-31 + span:not(.user)::before,
     #chat.colored-nicks .user.color-31 + i::before,
@@ -1723,6 +1754,7 @@ form.message-search .input-wrapper {
   #chat.colored-nicks .user.color-32 + i + i + i + i
 #chat.colored-nicks .user.color-32 + i + i + i + i + i {
     color: #9fffec;
+    font-weight: 200;
     position: relative; }
     #chat.colored-nicks .user.color-32 + span:not(.user)::before,
     #chat.colored-nicks .user.color-32 + i::before,

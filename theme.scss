@@ -1078,7 +1078,7 @@ $username-colors:
     & + i + i + i + i
     & + i + i + i + i + i {
       color: $selected-color;
-
+      font-weight: 200;
       position: relative;
 
       &::before {
