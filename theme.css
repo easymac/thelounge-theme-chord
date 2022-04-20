@@ -12,7 +12,6 @@
 
 */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
-@import url("https://raw.githubusercontent.com/easymac/thelounge-theme-chord/master/version.css");
 /*
   CSS variables so they can be overridden
 */
@@ -30,6 +29,7 @@
   --body-bg-color: #2b2e31;
   --status-msg-filter: saturate(30%) brightness(102%);
   --document-version: 116;
+  --available-version: 116;
   --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1); }
 
 /*
@@ -2076,6 +2076,15 @@ form.message-search .input-wrapper {
   #form:focus-within {
     margin-bottom: 60px !important; } }
 
+/*
+ Update status indicators
+
+ Uses a pretty cool trick where a variable is imported from a CDN
+ that serves the `version.css` file from the GitHub repo, allowing
+ a comparison.
+
+ This might be clever or it might be stupid. Time will tell.
+ */
 #help .about::before {
   content: '\f06a   An update is available for Chord, your active theme.';
   display: block;
@@ -2085,7 +2094,7 @@ form.message-search .input-wrapper {
   font-size: 14px;
   font-family: "FontAwesome", var(--primary-font);
   white-space: pre-wrap;
-  height: var(--update-available);
+  height: calc(var(--update-available) * 1em + calc(var(--update-available) * 20px));
   padding: calc(10px * var(--update-available));
   margin: calc(10px * var(--update-available)) 0;
   overflow: hidden; }
