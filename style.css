@@ -1,3 +1,103 @@
+/*
+  Github Pages style for Chord
+*/
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
+@import url("https://cdn.jsdelivr.net/gh/easymac/thelounge-theme-chord/version.css");
+/*
+  CSS variables so they can be overridden
+*/
+:root {
+  --primary-font: Public Sans, sans-serif;
+  --logo-font: DM Serif Display, serif;
+  --chat-background: #2b2e31;
+  --sidebar-background: #222428;
+  --off-black: #171b20;
+  --off-white: #eee;
+  --link-color: #7aafff;
+  --highlight-bg-color: #2f3b4c;
+  --chat-wrap-width: 1200px;
+  --search-background: #27292d;
+  --body-bg-color: #2b2e31;
+  --status-msg-filter: saturate(30%) brightness(102%);
+  --document-version: 117;
+  --available-version: 117;
+  --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1);
+  --logo-width: clamp(150px, 60vw, 300px); }
+
 body {
-  font-family: sans-serif;
-}
+  background-color: var(--chat-background);
+  color: var(--off-white);
+  font-family: var(--primary-font);
+  text-align: center; }
+
+#logo {
+  width: var(--logo-width);
+  height: var(--logo-width);
+  margin: 250px auto 0 auto;
+  display: block;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 98.73 86.6"><defs><style>.cls-1{fill:url(%23linear-gradient);}.cls-2{fill:url(%23linear-gradient-2);}.cls-3{fill:url(%23linear-gradient-3);}</style><linearGradient id="linear-gradient" x1="62.28" y1="33.78" x2="19.21" y2="8.92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23ccc"/><stop offset="0" stop-color="%23cdcdcd"/><stop offset="0.02" stop-color="%23dedede"/><stop offset="0.05" stop-color="%23e9e9e9"/><stop offset="0.09" stop-color="%23f0f0f0"/><stop offset="0.19" stop-color="%23f2f2f2"/></linearGradient><linearGradient id="linear-gradient-2" x1="34.66" y1="36.88" x2="34.66" y2="86.6" xlink:href="%23linear-gradient"/><linearGradient id="linear-gradient-3" x1="53.79" y1="63.8" x2="96.85" y2="38.94" xlink:href="%23linear-gradient"/></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_2-2" data-name="Layer 2"><path class="cls-1" d="M76.88,8.47,60.48,36.88h-55a4.11,4.11,0,0,0-3.56,2.06l20-34.56v0l1.33-2.3A4.12,4.12,0,0,1,26.74,0H72a4.09,4.09,0,0,1,3.56,2.06l1.33,2.3v0A4.12,4.12,0,0,1,76.88,8.47Z"/><path class="cls-2" d="M69.32,86.6H26.74a4.12,4.12,0,0,1-3.57-2.06L.55,45.36a4.15,4.15,0,0,1,0-4.12l1.33-2.3a4.11,4.11,0,0,1,3.56-2.06h32.8L49.36,56.13l16.4,28.41A4.12,4.12,0,0,0,69.32,86.6Z"/><path class="cls-3" d="M98.17,45.36l-14,24.16L94.09,86.6H69.33a4.09,4.09,0,0,1-3.56-2.06L49.36,56.13,60.48,36.88,76.89,8.47a4.17,4.17,0,0,0,0-4.09L96.84,38.94l1.33,2.3A4.1,4.1,0,0,1,98.17,45.36Z"/></g></g></svg>');
+  background-repeat: no-repeat; }
+
+h1 {
+  font-family: var(--logo-font);
+  font-size: clamp(4em, 30vw, 14em);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1em; }
+
+h2 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.0em;
+  margin-top: 0; }
+
+#links {
+  text-align: center; }
+
+a {
+  color: var(--link-color);
+  text-decoration: underline; }
+  a:hover {
+    color: #88c8ff; }
+  a:focus {
+    color: var(--link-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none; }
+
+img {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+#browser {
+  margin-top: 150px;
+  border: 5px solid black;
+  display: inline-block; }
+  #browser::before {
+    content: 'Chord';
+    color: white;
+    display: block;
+    background: black;
+    padding: 2px;
+    font-size: 0.75em; }
+
+#description {
+  width: 95vw;
+  margin: auto;
+  max-width: 600px;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  text-align: left;
+  line-height: 2em; }
+  #description h4 {
+    font-size: 2.5em;
+    margin-bottom: 0; }
+  #description pre {
+    background: var(--sidebar-background);
+    height: 64px;
+    line-height: 64px;
+    padding: 0; }
+  #description p:last-child {
+    margin-top: 80px; }
