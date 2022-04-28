@@ -624,7 +624,6 @@ form.message-search {
     margin-bottom: 1px;
   
     max-width: var(--chat-wrap-width);
-    align-items: center;
 
     &.self .content {
       color: #fff;
@@ -780,6 +779,7 @@ form.message-search {
     font-weight: 500;
     color: $muted-blue;
     padding-left: 10px;
+    bottom: -4px;
   }
 
   .unread-marker, .date-marker {

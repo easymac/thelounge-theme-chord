@@ -415,8 +415,7 @@ form.message-search .input-wrapper {
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 1px;
-    max-width: var(--chat-wrap-width);
-    align-items: center; }
+    max-width: var(--chat-wrap-width); }
     #chat .msg.self .content {
       color: #fff; }
     #chat .msg .content i, #chat .msg .content span {
@@ -574,7 +573,8 @@ form.message-search .input-wrapper {
     font-size: 0.8em;
     font-weight: 500;
     color: #55606c;
-    padding-left: 10px; }
+    padding-left: 10px;
+    bottom: -4px; }
   #chat .unread-marker, #chat .date-marker {
     text-align: right;
     font-weight: normal; }
