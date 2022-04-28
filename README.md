@@ -21,9 +21,34 @@ Below are snippets designed to be pasted in the `Custom Stylesheet` setting to o
 
 #### Style for bots
 ```CSS
+/* Monospace font for better ASCII */
 #chat .msg[data-from=BOT_NICKNAME] .content {
-  font-family: monospace;
+  font-family: monospace !important;
   color: #888;
+}
+
+/* Reduce line height to 1.0 for better ASCII */
+#chat .msg[data-from=BOT_NICKNAME] .time, #chat .msg[data-from=BOT_NICKNAME] .from, #chat .msg[data-from=BOT_NICKNAME] .content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#chat .msg[data-from=BOT_NICKNAME] .content span {
+  display: inline-block;
+}
+#chat .msg[data-from=BOT_NICKNAME] {
+  margin-bottom: 0;
+}
+
+/* Restore spacing for non-bot messages adjacent to bot messages when using
+ * the previous block.
+ */
+#chat .msg[data-from=BOT_NICKNAME].previous-source + .msg:not(.previous-source) {
+  padding-top: 3px;
+}
+
+/* Hide timestamps for consecutive bot messages */
+#chat .msg[data-from=BOT_NICKNAME].previous-source .time {
+  visibility: hidden;
 }
 ```
 #### Set your own nickname color
