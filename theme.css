@@ -415,7 +415,8 @@ form.message-search .input-wrapper {
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 1px;
-    max-width: var(--chat-wrap-width); }
+    max-width: var(--chat-wrap-width);
+    align-items: center; }
     #chat .msg.self .content {
       color: #fff; }
     #chat .msg .content i, #chat .msg .content span {
