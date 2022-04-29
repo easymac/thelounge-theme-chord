@@ -1,7 +1,7 @@
 /*
   
   Chord
-  v1.1.7
+  v1.1.8
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
@@ -10,6 +10,12 @@
   For The Lounge v4.3.1.
 
 */
+
+:root {
+  --document-version: 118;
+  --available-version: 118;
+  --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1);
+}
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900');
 @import url('https://cdn.jsdelivr.net/gh/easymac/thelounge-theme-chord/version.css');
@@ -55,9 +61,6 @@ $chat-wrap-width: 1200px;
   --body-bg-color: #{$dark-background};
 
   --status-msg-filter: saturate(30%) brightness(102%);
-  --document-version: 117;
-  --available-version: 117;
-  --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1);
 }
 
 
