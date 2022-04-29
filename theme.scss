@@ -1,7 +1,7 @@
 /*
   
   Chord
-  v1.1.8
+  v1.1.9
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
@@ -12,8 +12,8 @@
 */
 
 :root {
-  --document-version: 118;
-  --available-version: 118;
+  --document-version: 119;
+  --available-version: 119;
   --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1);
 }
 
@@ -1021,6 +1021,12 @@ $mobile-sidebar-width: 80%;
 
   #chat .userlist {
     background: var(--chat-background);
+  }
+
+  #chat .msg .time {
+    bottom: 0;
+    padding-left: 0;
+    padding-right: 3px;
   }
 
   #connect .container, #settings .container, #help .container {

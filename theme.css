@@ -2,7 +2,7 @@
 /*
   
   Chord
-  v1.1.8
+  v1.1.9
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
@@ -14,8 +14,8 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,100..900;1,100..900");
 @import url("https://cdn.jsdelivr.net/gh/easymac/thelounge-theme-chord/version.css");
 :root {
-  --document-version: 118;
-  --available-version: 118;
+  --document-version: 119;
+  --available-version: 119;
   --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1); }
 
 /*
@@ -736,6 +736,10 @@ form.message-search .input-wrapper {
     text-transform: uppercase; }
   #chat .userlist {
     background: var(--chat-background); }
+  #chat .msg .time {
+    bottom: 0;
+    padding-left: 0;
+    padding-right: 3px; }
   #connect .container, #settings .container, #help .container {
     margin: auto;
     align-self: center; } }
