@@ -3,6 +3,8 @@ Darkly elegant theme for The Lounge.
 
 ![Preview](https://github.com/easymac/thelounge-theme-chord/blob/master/chord-screenshot.png)
 
+![Second preview](https://github.com/easymac/thelounge-theme-chord/blob/master/chord-screenshot-2.png)
+
 Chord is designed to offer a pleasant visual revamp with specific improvements in mobile usability, support for devices with rounded screens, and an emphasis on type and legibility.
 
 ## Installation
