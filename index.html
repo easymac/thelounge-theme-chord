@@ -9,7 +9,7 @@
     <div id="logo"></div>
     <h1>Chord</h1>
     <h2>
-      Darkly elegant theme for <a href="https://thelounge.chat/">The Lounge</a>.
+      Elegant & dark theme for <a href="https://thelounge.chat/">The Lounge</a>.
     </h2>
     <p>by easymac</p>
     <div id="links">
@@ -17,8 +17,13 @@
       —
       <a href="https://www.npmjs.com/package/thelounge-theme-chord">NPM</a>
     </div>
-    <div id="browser">
-      <img src="chord-screenshot-4.png" />
+    <div id="browsers">
+      <div id="browser">
+        <img src="chord-screenshot-4.png" />
+      </div>
+      <div id="mobile-browser">
+        <img src="chord-screenshot-mobile.png" />
+      </div>
     </div>
     <div id="description">
       <p>
@@ -28,21 +33,73 @@
       </p>
       <h4>Installation</h4>
       <p>If you installed The Lounge witha package manager:</p>
-      <pre>
-        thelounge install thelounge-theme-chord
-      </pre>
+      <pre>thelounge install thelounge-theme-chord</pre>
       <p>
         If you installed The Lounge from source:
       </p>
-      <pre>
-        node index.js install thelounge-theme-chord
-      </pre>
+      <pre>node index.js install thelounge-theme-chord</pre>
       <h4>Cookbook</h4>
       <p>
         Below are snippets designed to be pasted in the
         <span>custom stylesheet</span> settings field to offer basic tweaks
         and personalization.
       </p>
+      <h5>Style for bots</h5>
+      <p>
+        Gives bots a monospace font so ASCII and other formatting is rendered
+        correctly. Replace <code>BOT_NICKNAME</code> with the bot's nick, and
+        replicate the snippet for every bot you want to style.
+      </p>
+      <pre><code>/* Monospace font for better ASCII */
+#chat .msg[data-from=BOT_NICKNAME] .content {
+  font-family: monospace !important;
+  color: #888;
+}
+
+/* Reduce line height to 1.0 for better ASCII */
+#chat .msg[data-from=BOT_NICKNAME] .time,
+#chat .msg[data-from=BOT_NICKNAME] .from,
+#chat .msg[data-from=BOT_NICKNAME] .content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#chat .msg[data-from=BOT_NICKNAME] .content span {
+  display: inline-block;
+}
+#chat .msg[data-from=BOT_NICKNAME] {
+  margin-bottom: 0;
+}
+
+/* Restore spacing for non-bot messages adjacent to bot messages when using
+* the previous block.
+*/
+#chat .msg[data-from=BOT_NICKNAME].previous-source + .msg:not(.previous-source) {
+  padding-top: 3px;
+}
+
+/* Hide timestamps for consecutive bot messages */
+#chat .msg[data-from=BOT_NICKNAME].previous-source .time {
+  visibility: hidden;
+}</code></pre>
+      <h5>Set your own nickname color</h5>
+      <pre><code>#chat .msg.self .user {
+  color: #236BFF;
+}</code></pre>
+      <p>
+        To change your color in the userlist, you have to hard-code your nick:
+      </p>
+      <pre><code>.user[data-name=YOUR_NICKNAME] {
+  color: #236BFF;
+}</code></pre>
+      <p>(This can also be used to change the nick colors of other users)</p>
+      <h5>Adjust message wrap width</h5>
+      <pre><code>:root {
+  --chat-wrap-width: 1200px /* default */
+}</code></pre>
+      <h5>Disable update indicator</h5>
+      <pre><code>:root {
+  --update-available: 0;
+}</code></pre>
       <p>
         <a href="https://github.com/easymac/thelounge-theme-chord">
           View more info &amp; the source on GitHub.
