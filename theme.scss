@@ -297,7 +297,11 @@ a {
   background: #222428;
   font-family: var(--primary-font);
 
-  .scrollable-area { overflow-x: visible }
+  .scrollable-area { 
+    overflow-x: visible;
+    overflow-y: scroll;
+    // fixes scroll
+  }
 
   .jump-to-input {
     margin: 0 0 15px 0;
