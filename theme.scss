@@ -1,7 +1,7 @@
 /*
   
   Chord
-  v1.1.9
+  v1.2.0
   by easymac
   https://github.com/easymac/thelounge-theme-chord
   
@@ -12,8 +12,8 @@
 */
 
 :root {
-  --document-version: 119;
-  --available-version: 119;
+  --document-version: 120;
+  --available-version: 120;
   --update-available: clamp(0, calc(var(--available-version) - var(--document-version)), 1);
 }
 
