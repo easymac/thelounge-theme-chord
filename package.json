@@ -26,8 +26,7 @@
   "bugs": {
     "url": "https://github.com/easymac/thelounge-theme-chord/issues"
   },
-  "dependencies": {},
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "node-sass": "^8.0.0"
   }
 }
