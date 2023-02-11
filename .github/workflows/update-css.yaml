@@ -1,0 +1,30 @@
+on:
+  push:
+    paths:
+      - *.scss
+      - .github/workflows/update-css.yaml
+
+
+jobs:
+  build_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.4.11
+        with:
+          source: theme.scss
+          destination: theme.css
+
+      - name: Add and Commit changes to pr-pages branch
+        run: |
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add theme.css
+          git commit -m 'Update compiled theme.css'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
