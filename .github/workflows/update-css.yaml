@@ -1,4 +1,5 @@
 on:
+  workflow_dispatch:
   push:
     paths:
       - theme.scss
@@ -20,16 +21,15 @@ jobs:
       - id: updated-or-not
         run: |
           if diff /tmp/theme.css theme.css ; then
-            echo "updated=true" | tee -a $GITHUB_OUTPUT
-          else
             echo "updated=false" | tee -a $GITHUB_OUTPUT
+          else
+            echo "updated=true" | tee -a $GITHUB_OUTPUT
           fi
       - run: cp /tmp/theme.css . -f
       - uses: EndBug/add-and-commit@v9
         if: steps.updated-or-not.outputs.updated == 'true'
         #needs to be quoted
         with:
-          fetch: false
           add: "theme.css"
           message: "[ci] update theme.css"
           committer_name: GitHub Actions
