@@ -1,0 +1,36 @@
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - theme.scss
+      - .github/workflows/update-css.yaml
+
+
+jobs:
+  build_css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Compile CSS from SCSS files
+        uses: gha-utilities/sass-build@v0.4.11
+        with:
+          source: theme.scss
+          destination: /tmp/theme.css
+
+      - id: updated-or-not
+        run: |
+          if diff /tmp/theme.css theme.css ; then
+            echo "updated=false" | tee -a $GITHUB_OUTPUT
+          else
+            echo "updated=true" | tee -a $GITHUB_OUTPUT
+          fi
+      - run: cp /tmp/theme.css . -f
+      - uses: EndBug/add-and-commit@v9
+        if: steps.updated-or-not.outputs.updated == 'true'
+        #needs to be quoted
+        with:
+          add: "theme.css"
+          message: "[ci] update theme.css"
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
