@@ -293,14 +293,13 @@ a {
   Network list
 */
 #sidebar {
-  padding: 0px 30px;
   background: #222428;
   font-family: var(--primary-font);
 
-  .scrollable-area { 
+  .scrollable-area {
+    padding: 0px 30px;
     overflow-x: visible;
     overflow-y: scroll;
-    // fixes scroll
   }
 
   .jump-to-input {
