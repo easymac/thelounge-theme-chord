@@ -96,5 +96,5 @@ Feel free to take a crack at any of these that interest you:
 - **Optimize for your devices**: I only tested Chord on my own devices. If you identify any fixes or areas that can be improved for your device, please open an issue with a screenshot! (Or make a PR if you're feeling generous.) This particularly includes adjustments that can be made to media queries to better scale the UI to your screens.
 - **Update the icons**: fontawesome is great and free but some of the icons seem a little too thick for Chord.
 - **Add some more nickname colors**: Chord currently has 14 defined and as many as 32 could be supported.
-- **Create GitHub Actions**: Triggers to automatically build the CSS file, bump the version number, and release on GitHub would be really awesome.
+- **Create GitHub Actions**: Triggers to automatically bump the version number and release on NPM would be really awesome.
 - **Design a light mode**: I would love for the theme to respect a user's `prefers-color-scheme` setting eventually, but a light mode needs to be created first. This could be achieved by implementing better CSS variable integration into the stylesheet, overriding the dark colors, and making necessary adjustments for legibility.
