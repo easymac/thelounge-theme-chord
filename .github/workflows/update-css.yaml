@@ -15,16 +15,22 @@ jobs:
         uses: gha-utilities/sass-build@v0.4.11
         with:
           source: theme.scss
-          destination: theme.css
+          destination: /tmp/theme.css
 
-      - name: Add and Commit changes to pr-pages branch
+      - id: updated-or-not
         run: |
-          git config --local user.email 'action@github.com'
-          git config --local user.name 'GitHub Action'
-          git add theme.css
-          git commit -m 'Update compiled theme.css'
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          if diff /tmp/theme.css theme.css ; then
+            echo "updated=true" | tee -a $GITHUB_OUTPUT
+          else
+            echo "updated=false" | tee -a $GITHUB_OUTPUT
+          fi
+      - run: cp /tmp/theme.css . -f
+      - uses: EndBug/add-and-commit@v9
+        if: steps.updated-or-not.outputs.updated == 'true'
+        #needs to be quoted
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch: false
+          add: "theme.css"
+          message: "[ci] update theme.css"
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
