@@ -349,10 +349,10 @@ a {
   .network .collapse-network-icon {
     background: white;
     border-radius: 999px;
-    font-size: 0.8em;
+    font-size: 13px;
     display: block;
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
     position: relative;
 
     &:before {
@@ -362,7 +362,7 @@ a {
       left: 0;
       right: 0;
       bottom: 0;
-      line-height: 13px;
+      line-height: 15px;
     
     }
   }
@@ -995,7 +995,7 @@ $mobile-sidebar-width: 80%;
     .network .collapse-network-icon {
       width: 18px;
       height: 18px;
-      font-size: 0.75em;
+      font-size: 0.6em;
 
       &::before { line-height: 18px; }
     }
